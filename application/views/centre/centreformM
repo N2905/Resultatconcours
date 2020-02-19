@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Enregistrement centre</title>
+	<link rel="stylesheet" type="text/css" href="<?= base_url('asset/css/bootstrap.min.css')?>">
+	<link rel="stylesheet" type="text/css" href="<?= base_url('asset/css/bootstrap.min.css')?>">
+</head>
+<body>
+<form method="post" action="<?= base_url('Centre/save'); ?> " >
+	<h1>Formulaire centre</h1>
+	<label>Lieu:</label>
+	<input type="text" name="centre_lieu" ><br><br>
+	<input type="submit" name="save" value="Enregistre">
+	<a href="<?php echo base_url ('Centre/index') ?>">Retour</a>
+</form>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Liste Epreuve</title>
+</head>
+<body>
+
+ <h3 align="center">Liste des Epreuves</h3>
+ <div class="table-responsive">
+ <table class="table table-border" align="center">
+ 	<a href="<?= base_url('Epreuve/ajout')?>"><h4 align="left">Nouveau</h4></a>
+ 	<thead>
+ 		<tr>
+ 			<th>ID</th>
+ 			<th>Epreuve</th>
+ 			<th>Coefficient</th>
+ 			<th>Action</th>
+ 		</tr>
+ 	</thead>
+ 	<tbody>
+ 			<?php if(count($data) > 0){?>
+			<?php foreach ($data as $epre) {?>
+ 		<tr>
+ 		     <td><?php echo $epre->epre_id; ?></td>
+ 			<td><?php echo $epre->epre_nom_mat; ?></td>
+ 			<td> <?php echo $epre->coefficient; ?></td> 
+ 			<td>
+ 				<a href="<?=base_url('Epreuve/editer/' .$epre->epre_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
+ 				<a href="<?=base_url('Epreuve/delete/' .$epre->epre_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+ 			</tdepre 		</tr>
+ 		<?php }?>
+ 		<?php }?>
+ 		
+ 	</tbody>
+ </table>
+ </div>
+</body>
+</html>
