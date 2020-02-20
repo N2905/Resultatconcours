@@ -17,11 +17,12 @@ class Parcours extends CI_Controller{
 		$this->load->view('menu_import/footer');
 	}
 	public function ajout(){
+		$data['mentionjoin']=$this->m->mentionjoin();
 		$this->load->view('menu_import/head');
 		$this->load->view('menu_import/header');
 		$this->load->view('menu_import/menu-gauche');
 		$this->load->view('menu_import/menu-centre');
-		$this->load->view('parcours/parcoursform');
+		$this->load->view('parcours/parcoursform',$data);
 		$this->load->view('menu_import/footer');
 	}
 	public function save(){

@@ -18,14 +18,14 @@
 	</thead>
 	<tbody>
 		<?php if(count($data)>0){?>
-		<?php foreach ($data as $parc){?>
+		<?php foreach ($data as $parcoursjoint){?>
 		<tr>
-			<td><?php echo $parc->parc_id;?></td>
-			<td><?php echo $parc->parc_nom;?></td>
-			<td><?php echo $parc->parc_diplome;?></td>
+			<td><?php echo $parcoursjoint->parc_id;?></td>
+			<td><?php echo $parcoursjoint->parc_nom;?></td>
+			<td><?php echo $parcoursjoint->parc_diplome;?></td>
 			<td>
-				<a href="<?=base_url('Parcours/editer/'. $parc->parc_id);?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
-				<a href="<?=base_url('Parcours/delete/'.$parc->parc_id)?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+				<a href="<?=base_url('Parcours/editer/'. $parcoursjoint->parc_id);?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
+				<a href="<?=base_url('Parcours/delete/'.$parcoursjoint->parc_id)?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
 			</td>
 		</tr>
 		<?php }?>

@@ -1,13 +1,3 @@
-<?php
-	$conn=mysqli_connect("localhost","root","","resulatconcours");
-	$req_centre ="SELECT * FROM centredexamen ORDER BY centre_lieu ASC";
-	$res_centre = mysqli_query($conn,$req_centre) or die(mysqli_error($conn));
-?>
-<?php 
-	$conn=mysqli_connect("localhost","root","","resulatconcours");
-	$req_parcours="SELECT * FROM parcours ORDER BY parc_nom ASC";
-	$res_parcours=mysqli_query($conn,$req_parcours) or die(mysqli_error($conn));
- ?>
 <form method="post" action="<?= base_url('Candidat/save'); ?> ">
 	<div class="row">
 	<legend>Formulaire candidat</legend>
@@ -56,8 +46,9 @@
 		<label for="centre_lieu">Centre d'examen:</label>
 		<select name="centre_id" class="form-control required">
 		    <option disabled hidden selected>Votre centre</option>
-			    <?php while($centre = mysqli_fetch_array($res_centre,MYSQLI_ASSOC)){?>
-					<option value="<?php echo $centre["centre_id"] ?>"><?php echo $centre["centre_lieu"] ?></option>
+		    <?php foreach ($centrejoint as $centre) {?>
+			    <option value="<?php echo $centre->centre_id;?>"><?php echo $centre->centre_lieu;?>
+			    </option>
 				<?php } ?>
 		</select>
 	</div>
@@ -65,8 +56,8 @@
 	 	<label for="parc_nom">Parcours:</label>
 	 	<select name="parc_id" class="form-control required">
 	 		<option disabled hidden selected>Votre parcours</option>
-	 		<?php while($parc=mysqli_fetch_array($res_parcours,MYSQLI_ASSOC)){?>
-	 			<option value="<?php echo $parc["parc_id"] ?>"> <?php echo $parc["parc_nom"] ?>
+	 		<?php foreach ($parcoursjoint as $parc) {?>
+	 			<option value="<?php echo $parc->parc_id;?>"><?php echo $parc->parc_nom;?>
 	 			</option>
 	 		<?php } ?>
 	 	</select>

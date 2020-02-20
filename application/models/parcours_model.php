@@ -58,5 +58,9 @@ class parcours_model extends CI_Model{
 			return false;
 		}
 	}
+	public function mentionjoin(){
+		$query="SELECT * FROM mention ORDER BY ment_nom ASC";
+		 return $this->db->query($query)->result();
+	}
 
 }

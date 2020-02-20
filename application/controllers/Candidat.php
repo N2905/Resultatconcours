@@ -17,11 +17,13 @@ class Candidat extends CI_Controller {
  	  $this->load->view('menu_import/footer');
  }
  public function ajout(){
+  $data['centrejoint']= $this->m->centrejoint();
+  $data['parcoursjoint']=$this->m->parcoursjoint();
  	$this->load->view('menu_import/head');
   $this->load->view('menu_import/header');
   $this->load->view('menu_import/menu-gauche');
   $this->load->view('menu_import/menu-centre');
- 	$this->load-> view('candidat/candidatform');
+ 	$this->load-> view('candidat/candidatform',$data);
  	$this->load->view('menu_import/footer');
  }
  public function save(){
@@ -30,10 +32,10 @@ class Candidat extends CI_Controller {
  }
  public function editer($cand_id){
  	$data['data']= $this->m->getCandById($cand_id);
- 	 $this->load->view('menu_import/head');
-  	$this->load->view('menu_import/header');
-  	$this->load->view('menu_import/menu-gauche');
-  	$this->load->view('menu_import/menu-centre');
+ 	$this->load->view('menu_import/head');
+  $this->load->view('menu_import/header');
+  $this->load->view('menu_import/menu-gauche');
+  $this->load->view('menu_import/menu-centre');
  	$this->load->view('candidat/formediter',$data);
  	$this->load->view('menu_import/footer');
  }
@@ -47,12 +49,14 @@ class Candidat extends CI_Controller {
  	redirect('Candidat/index');
 
  }
- public function listeCandidat(){
+ public function listeCandidat(){  
+
+    $data['datalistes']= $this->m->listeCandidat(); 
     $this->load->view('menu_import/head');
     $this->load->view('menu_import/header');
     $this->load->view('menu_import/menu-gauche');
     $this->load->view('menu_import/menu-centre');
-    $this->load->view('liste/listecandidat');
+    $this->load->view('liste/listecandidat', array('datalistes'=>$this->m->listeCandidat(),'teste'=>'tets'));
     $this->load->view('menu_import/footer');
   }
 

@@ -17,13 +17,13 @@
  	</thead>
  	<tbody>
  			<?php if(count($data) > 0){?>
-			<?php foreach ($data as $ment) {?>
+			<?php foreach ($data as $mentionjoin) {?>
  		<tr>
- 		     <td><?php echo $ment->ment_id; ?></td>
- 			<td><?php echo $ment->ment_nom; ?></td> 
+ 		     <td><?php echo $mentionjoin->ment_id; ?></td>
+ 			<td><?php echo $mentionjoin->ment_nom; ?></td> 
  			<td>
- 				<a href="<?=base_url('Mention/editer/' .$ment->ment_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
- 				<a href="<?=base_url('Mention/delete/' .$ment->ment_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+ 				<a href="<?=base_url('Mention/editer/' .$mentionjoin->ment_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
+ 				<a href="<?=base_url('Mention/delete/' .$mentionjoin->ment_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
  			</td>
  		</tr>
  		<?php }?>

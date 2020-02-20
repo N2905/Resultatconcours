@@ -17,13 +17,13 @@
  	</thead>
  	<tbody>
  			<?php if(count($data) > 0){?>
-			<?php foreach ($data as $centre) {?>
+			<?php foreach ($data as $centrejoint) {?>
  		<tr>
- 		     <td><?php echo $centre->centre_id; ?></td>
- 			<td><?php echo $centre->centre_lieu; ?></td> 
+ 		     <td><?php echo $centrejoint->centre_id; ?></td>
+ 			<td><?php echo $centrejoint->centre_lieu; ?></td> 
  			<td>
- 				<a href="<?=base_url('Centre/editer/' .$centre->centre_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
- 				<a href="<?=base_url('Centre/delete/' .$centre->centre_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+ 				<a href="<?=base_url('Centre/editer/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
+ 				<a href="<?=base_url('Centre/delete/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
  			</td>
  		</tr>
  		<?php }?>

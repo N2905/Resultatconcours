@@ -92,5 +92,19 @@ class candidat_model extends CI_Model{
 			return false;
 		}
 	}
+	public function listeCandidat(){
+		$query = "SELECT c.cand_id,c.nom_cand,c.prenom_cand,c.email_cand,c.tel_cand,e.centre_lieu,p.parc_nom FROM candidat c,centredexamen e,parcours p WHERE c.centre_id=e.centre_id AND c.parc_id=p.parc_id";  
+		return $this->db->query($query)->result(); 
+	}
+	public function centrejoint(){
+		$query="SELECT * FROM centredexamen ORDER BY centre_lieu ASC";
+		return $this->db->query($query)->result();
+	}
+	public function parcoursjoint(){
+		$query="SELECT * FROM parcours ORDER BY parc_nom ASC";
+		return $this->db->query($query)->result();
+	}
+
+
 }
 
