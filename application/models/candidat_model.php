@@ -22,7 +22,7 @@ class candidat_model extends CI_Model{
 			'cand_lieu_naiss' =>$this ->input->post('cand_lieu_naiss'),
 			'cin_cand' =>$this ->input->post('cin_cand'),
 			'cand_lieu_cin' =>$this ->input->post('cand_lieu_cin'),
-			'cand_num_bac ' =>$this ->input->post('cand_num_bac '),
+			'cand_num_bac ' =>$this ->input->post('cand_num_bac'),
 			'email_cand' =>$this ->input->post('email_cand'),
 			'cand_sexe' =>$this ->input->post('cand_sexe'),
 			'cand_indication' =>$this ->input->post('cand_indication'),
@@ -31,7 +31,9 @@ class candidat_model extends CI_Model{
 			'cand_nationalite' =>$this ->input->post('cand_nationalite'),
 			'cand_codepostale' =>$this ->input->post('cand_codepostale'),
 			'cand_pays' =>$this ->input->post('cand_pays'),
-			'cand_ville' =>$this ->input ->post('cand_ville'));
+			'cand_ville' =>$this ->input ->post('cand_ville'),
+		    'centre_id' =>$this ->input ->post('centre_id'),
+		    'parc_id'=>$this->input->post('parc_id'));
 		$this->db->insert('candidat', $field);
 		if($this->db->affected_rows() > 0){
 			return true;
@@ -68,7 +70,9 @@ class candidat_model extends CI_Model{
 			'cand_nationalite' =>$this ->input->post('cand_nationalite'),
 			'cand_codepostale' =>$this ->input->post('cand_codepostale'),
 			'cand_pays' =>$this ->input->post('cand_pays'),
-			'cand_ville' =>$this ->input ->post('cand_ville'));
+			'cand_ville' =>$this ->input ->post('cand_ville'),
+		    'centre_id' =>$this ->input ->post('centre_id'),
+		    'parc_id'=>$this->input->post('parc_id'));
 		//var_dump($field); die();
 		$this->db->where('cand_id', $cand_id);
 		$this->db->update('candidat', $field);

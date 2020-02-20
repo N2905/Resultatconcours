@@ -4,8 +4,8 @@
 	<title>Ajout parcours</title>
 </head>
 <body>
-	<h3 align="center">Liste parcours existant</h3>
-	<a href="<?= base_url('Parcours/ajout');?>"><h4 align="left">Nouveau</h4></a>
+	<legend>Liste parcours existant</legend>
+	<a href="<?= base_url('Parcours/ajout');?>"><h4 align="left"> <button class="btn btn-primary">Nouveau</button></h4></a>
 	<div class="table-responsive">
 <table class="table table-border" align="center">
 	<thead>

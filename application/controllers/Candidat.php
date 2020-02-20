@@ -13,14 +13,14 @@ class Candidat extends CI_Controller {
   	$this->load->view('menu_import/header');
   	$this->load->view('menu_import/menu-gauche');
   	$this->load->view('menu_import/menu-centre');
- 	$this->load-> view('candidat/liste_candidat',$data);
- 	$this->load->view('menu_import/footer');
+  	$this->load-> view('candidat/liste_candidat',$data);
+ 	  $this->load->view('menu_import/footer');
  }
  public function ajout(){
  	$this->load->view('menu_import/head');
-  	$this->load->view('menu_import/header');
-  	$this->load->view('menu_import/menu-gauche');
-  	$this->load->view('menu_import/menu-centre');
+  $this->load->view('menu_import/header');
+  $this->load->view('menu_import/menu-gauche');
+  $this->load->view('menu_import/menu-centre');
  	$this->load-> view('candidat/candidatform');
  	$this->load->view('menu_import/footer');
  }
@@ -47,6 +47,14 @@ class Candidat extends CI_Controller {
  	redirect('Candidat/index');
 
  }
+ public function listeCandidat(){
+    $this->load->view('menu_import/head');
+    $this->load->view('menu_import/header');
+    $this->load->view('menu_import/menu-gauche');
+    $this->load->view('menu_import/menu-centre');
+    $this->load->view('liste/listecandidat');
+    $this->load->view('menu_import/footer');
+  }
 
  }
 	

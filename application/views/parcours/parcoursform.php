@@ -4,6 +4,7 @@
 	$res_mention = mysqli_query($conn,$req_mention) or die(mysqli_error($conn));
 ?>
 <form method="post" action="<?= base_url('Parcours/save'); ?> " >
+	<div class="row">
 	<legend>Formulaire parcours</legend>
 	<div class="form-group">
 	<label>Nom:</label>
@@ -25,7 +26,8 @@
 			<option value="Master">Master</option>
 		</select>
 	</div>
-		<button  value="Enregistre" class="btn btn-primary"> Enregistre</button>
+	</div>
+    <button  value="Enregistre" class="btn btn-primary"> Enregistre</button>
 	<button type="reset" class="btn btn-danger">Annuler</button>
 </form>
 

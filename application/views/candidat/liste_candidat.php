@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Liste Candidat</title>
-</head>
-<body>
+
 <legend>Liste des Candidats</legend>
  <div class="table-responsive">
  <table align="center" class="table table-bordered">
@@ -35,6 +30,7 @@
  	<tbody>
  			<?php if(count($data) > 0){?>
 			<?php foreach ($data as $cand) {?>
+
  		<tr>
  		     <td><?php echo $cand->cand_id;?></td>
  			<td><?php echo $cand->nom_cand;?></td>
@@ -67,5 +63,3 @@
  	</tbody>
  </table>
  </div>
-</body>
-</html>

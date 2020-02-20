@@ -4,11 +4,10 @@
 	<title>Liste Centre</title>
 </head>
 <body>
-
- <h3 align="center">Liste des Centres</h3>
+<legend>Liste des Centres</legend>
  <div class="table-responsive">
  <table class="table table-border" align="center">
- 	<a href="<?= base_url('Centre/ajout')?>"><h4 align="left">Nouveau</h4></a>
+ 	<a href="<?= base_url('Centre/ajout')?>"><h4 align="left"><button class="btn btn-primary">Nouveau</button></h4></a>
  	<thead>
  		<tr>
  			<th>ID</th>

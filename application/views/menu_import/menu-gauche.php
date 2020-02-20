@@ -42,7 +42,7 @@
                             <a href="<?php echo base_url() ?>index.php/candidat" >Candidat</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="../liste/listeEtatConger.php" >Etat de congé</a>
+                            <a href="<?php echo base_url()?>index.php/candidat/listeCandidat" >liste candidat</a>
                         </li>
                     </ul>
                 </div>
