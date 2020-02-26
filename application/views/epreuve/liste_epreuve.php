@@ -23,6 +23,7 @@
  		     <td><?php echo $epre->epre_id; ?></td>
  			<td><?php echo $epre->epre_nom_mat; ?></td>
  			<td> <?php echo $epre->coefficient; ?></td> 
+ 			<td></td>
  			<td>
  				<a href="<?=base_url('Epreuve/editer/' .$epre->epre_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
  				<a href="<?=base_url('Epreuve/delete/' .$epre->epre_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>

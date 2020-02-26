@@ -9,6 +9,7 @@
  				<th>Prenom</th>
  				<th>Email</th>
  				<th>Telepone</th>
+ 				<th>Année accademique</th>
  				<th>Centre d'examen</th>
  				<th>Parcours</th>
  				<th>Action</th> 
@@ -22,6 +23,7 @@
  				<td><?php echo $candidat->prenom_cand;?></td>
  				<td><?php echo $candidat->email_cand;?></td>
  				<td><?php echo $candidat->tel_cand;?></td>
+ 				<td><?php echo $candidat->anne_acc;?></td>
  				<td><?php echo $candidat->centre_lieu;?></td>
  				<td><?php echo $candidat->parc_nom;?></td>
  				<td>

@@ -127,6 +127,10 @@
 			<label for="cand_codepostale">Code postale :</label>
 			<input id="cand_codepostale" type="text" name="cand_codepostale" class="form-control required" value="<?= $data->cand_codepostale; ?>">
 		 </div>
+		 <div class="form-group">
+			<label for="anne_acc">Année Accadémique :</label>
+			<input id="anne_acc" type="date" name="anne_acc" class="form-control required" value="<?= $data->anne_acc; ?>">
+		 </div>
     </section>
     </div>
     <div style="padding: 15px;float: right;">

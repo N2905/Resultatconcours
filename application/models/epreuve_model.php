@@ -16,7 +16,8 @@ class epreuve_model extends CI_Model{
 		$field= array(
 			'epre_id'=>$this->input->post('epre_id'),
 			'epre_nom_mat'=>$this->input->post('epre_nom_mat'),
-			'coefficient'=>$this->input->post('coefficient'));
+			'coefficient'=>$this->input->post('coefficient'),
+			'parc_id'=>$this->input->post('parc_id'));
 		$this->db->insert('epreuve', $field);
 		if($this->db->affected_rows() > 0){
 			return true;
@@ -36,8 +37,9 @@ class epreuve_model extends CI_Model{
 	public function modifier(){
 		$epre_id=$this->input->post('txt_hidden');
 		$field=array(
-			'epre_nom_mat'=>$this->input->post('epre_nom_mat') , 
-			'coefficient'=>$this->input->post('coefficient'));
+		'epre_nom_mat'=>$this->input->post('epre_nom_mat'), 
+		'coefficient'=>$this->input->post('coefficient'),
+		'parc_id'=>$this->input->post('parc_id'));
 		$this->db->where('epre_id', $epre_id);
 		$this->db->update('epreuve', $field);
 		$this->db->last_query();
@@ -55,6 +57,10 @@ class epreuve_model extends CI_Model{
 		}else{
 			return false;
 		}
+	}
+	public function parcoursjoins(){
+		$query="SELECT * FROM parcours ORDER BY parc_nom ASC";
+		return $this->db->query($query)->result();
 	}
 }
 

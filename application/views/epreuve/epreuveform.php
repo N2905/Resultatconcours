@@ -16,6 +16,16 @@
 	<label>Coefficient:</label>
 	<input type="text" name="coefficient" class="form-control" >
     </div>
+    <div class="form-group">
+	 	<label for="parc_nom">Parcours:</label>
+	 	<select name="parc_id" class="form-control required">
+	 		<option disabled hidden selected>Votre parcours</option>
+	 		<?php foreach ($parcoursjoin as $parc) {?>
+	 			<option value="<?php echo $parc->parc_id;?>"><?php echo $parc->parc_nom;?>
+	 			</option>
+	 		<?php } ?>
+	 	</select>
+	</div>
     <button  value="Enregistre" class="btn btn-primary"> Enregistre</button>
     <button type="reset" class="btn btn-danger">Annuler</button>
 	

@@ -32,6 +32,7 @@ class candidat_model extends CI_Model{
 			'cand_codepostale' =>$this ->input->post('cand_codepostale'),
 			'cand_pays' =>$this ->input->post('cand_pays'),
 			'cand_ville' =>$this ->input ->post('cand_ville'),
+			'anne_acc' =>$this ->input ->post('anne_acc'),
 		    'centre_id' =>$this ->input ->post('centre_id'),
 		    'parc_id'=>$this->input->post('parc_id'));
 		$this->db->insert('candidat', $field);
@@ -71,6 +72,7 @@ class candidat_model extends CI_Model{
 			'cand_codepostale' =>$this ->input->post('cand_codepostale'),
 			'cand_pays' =>$this ->input->post('cand_pays'),
 			'cand_ville' =>$this ->input ->post('cand_ville'),
+			'anne_acc' =>$this ->input ->post('anne_acc'),
 		    'centre_id' =>$this ->input ->post('centre_id'),
 		    'parc_id'=>$this->input->post('parc_id'));
 		//var_dump($field); die();
@@ -93,7 +95,7 @@ class candidat_model extends CI_Model{
 		}
 	}
 	public function listeCandidat(){
-		$query = "SELECT c.cand_id,c.nom_cand,c.prenom_cand,c.email_cand,c.tel_cand,e.centre_lieu,p.parc_nom FROM candidat c,centredexamen e,parcours p WHERE c.centre_id=e.centre_id AND c.parc_id=p.parc_id";  
+		$query = "SELECT c.cand_id,c.nom_cand,c.prenom_cand,c.email_cand,c.tel_cand,c.anne_acc,ce.centre_lieu,p.parc_nom FROM candidat c,centredexamen ce,parcours p WHERE c.centre_id=ce.centre_id AND c.parc_id=p.parc_id";  
 		return $this->db->query($query)->result(); 
 	}
 	public function centrejoint(){

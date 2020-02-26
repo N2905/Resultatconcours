@@ -24,6 +24,7 @@
  			<th>Pays</th>
  			<th>Ville</th>
  			<th>Code postale</th>
+ 			<th>Année accademique</th>
  			<th>Action</th>
  		</tr>
  	</thead>
@@ -51,6 +52,7 @@
  			<td><?php echo $cand->cand_pays;?></td>  
  			<td><?php echo $cand->cand_ville;?></td> 
  			<td><?php echo $cand->cand_codepostale;?></td> 
+ 			<td><?php echo $cand->anne_acc;?></td> 
  			
  			<td>
  				<a href="<?=base_url('Candidat/editer/' .$cand->cand_id);?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>

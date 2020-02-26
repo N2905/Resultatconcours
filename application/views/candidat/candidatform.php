@@ -13,13 +13,13 @@
 	<div class="form-group">
 		<div class="col-md-6" style="padding-left: 0px">
 			<label for=" cand_date_naiss">Date de naissance :</label>
-			    <input id=" cand_date_naiss" type="text" name=" cand_date_naiss" class="form-control required">
+			    <input id=" cand_date_naiss" type="date" name=" cand_date_naiss" class="form-control required">
 		</div>
 		<div class="col-md-6" style="padding-right: 0px">
 			<label for="cand_lieu_naiss">Lieu de naissance :</label>
 		    <input id="cand_lieu_naiss" type="text" name="cand_lieu_naiss" class="form-control required">
 		</div>
-	</div>
+	</div> 
 	<div class="form-group">
 		<label for="cin_cand">CIN : </label>
 		<input id="cin_cand" type="text" name="cin_cand" class="form-control required">
@@ -31,12 +31,12 @@
 		</div>
 		<div class="col-md-6"  style="padding-right: 0px">
 			<label for="cand_du_cin">le : </label>
-			<input id="cand_du_cin" type="text" name="cand_du_cin" class="form-control">
+			<input id="cand_du_cin" type="date" name="cand_du_cin" class="form-control">
 		</div>
 	</div>
 	<div class="form-group">
 	<label>Date obtention baccaleaureat:</label>
-	<input type="text" name="cand_anne_bac" class="form-control"  >
+	<input type="date" name="cand_anne_bac" class="form-control"  >
     </div>
     <div class="form-group">
 	<label>Numero bacc:</label>
@@ -111,6 +111,10 @@
 		 <div class="form-group">
 			<label for="  cand_codepostale">Code postale :</label>
 			<input id="  cand_codepostale" type="text" name="  cand_codepostale" class="form-control required">
+		 </div>
+		  <div class="form-group">
+			<label for="  anne-acc">Année Accademique :</label>
+			<input id="  anne_acc" type="date" name="anne_acc" class="form-control required">
 		 </div>
     </section>
     </div>
