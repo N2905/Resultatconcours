@@ -1,8 +1,18 @@
-
+<form method="post" action="<?php echo base_url('Candidat/recherche');?>">
 <legend>Liste des Candidats</legend>
+		<div class="cont-rechercher">
+			<div class="input-group col-lg-5">
+		    <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motcher">
+		    <span class="input-group-btn"> 
+		      <button class="btn btn-success" type="submit">Réchercher</button>
+		    </span>
+		  </div>
+		</div>
+</form>
+<a href="<?php echo base_url('Candidat/ajout')?>"><button class="btn btn-primary" style="text-align: left">Nouveau</button></a>
  <div class="table-responsive">
  <table align="center" class="table table-bordered">
- 	<a href="<?= base_url('Candidat/ajout')?>"><h4 align="left"><button class="btn btn-primary">Nouveau</button></h4></a>
+ 	
  	<thead>
  		<tr>
  			<th>ID</th>

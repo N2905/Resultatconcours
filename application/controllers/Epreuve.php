@@ -16,6 +16,16 @@ class Epreuve extends CI_Controller {
  	  $this->load-> view('epreuve/liste_epreuve',$data);
  	  $this->load->view('menu_import/footer');
  }
+ public function recherche(){
+  $key=$this->input->post('motcherepre');
+  $data['data']=$this->m->recherche($key);
+  $this->load->view('menu_import/head');
+  $this->load->view('menu_import/header');
+  $this->load->view('menu_import/menu-gauche');
+  $this->load->view('menu_import/menu-centre');
+  $this->load->view('epreuve/liste_epreuve', $data);
+  $this->load->view('menu_import/footer');
+ }
  public function ajout(){
     $data['parcoursjoin']= $this->m->parcoursjoins();
  	  $this->load->view('menu_import/head');

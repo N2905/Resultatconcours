@@ -4,10 +4,21 @@
 	<title>Liste Centre</title>
 </head>
 <body>
+<form method="post" action="<?php echo base_url('Centre/recherche');?>">
+			<div class="cont-rechercher">
+			<div class="input-group col-lg-5">
+		    <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motchercentre">
+		    <span class="input-group-btn"> 
+		      <button class="btn btn-success" type="submit">Réchercher</button>
+		    </span>
+		  </div>
+		</div>
+	
+</form>
 <legend>Liste des Centres</legend>
+ <a href="<?php echo base_url('Centre/ajout')?>"><button class="btn btn-primary" style="text-align: left">Nouveau</button></a>
  <div class="table-responsive">
  <table class="table table-border" align="center">
- 	<a href="<?= base_url('Centre/ajout')?>"><h4 align="left"><button class="btn btn-primary">Nouveau</button></h4></a>
  	<thead>
  		<tr>
  			<th>ID</th>

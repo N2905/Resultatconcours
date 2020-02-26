@@ -4,6 +4,16 @@
 	<title>Liste Mention</title>
 </head>
 <body>
+	<form method="post" action="<?php echo base_url('Mention/recherche');?>">
+		<div class="cont-rechercher">
+			<div class="input-group col-lg-5">
+		    <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motchermention">
+		    <span class="input-group-btn"> 
+		      <button class="btn btn-success" type="submit">Réchercher</button>
+		    </span>
+		  </div>
+		</div>
+	</form>
 <legend>Liste des Mentions</legend>
  <div class="table-responsive">
  <table class="table table-border" align="center">

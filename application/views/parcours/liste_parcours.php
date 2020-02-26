@@ -4,6 +4,17 @@
 	<title>Ajout parcours</title>
 </head>
 <body>
+		<form method="post" action="<?php echo base_url('Parcours/recherche');?>">
+			<div class="cont-rechercher">
+			<div class="input-group col-lg-5">
+		    <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motcherparcours">
+		    <span class="input-group-btn"> 
+		      <button class="btn btn-success" type="submit">Réchercher</button>
+		    </span>
+		  </div>
+		</div>
+	
+	</form>
 	<legend>Liste parcours existant</legend>
 	<a href="<?= base_url('Parcours/ajout');?>"><h4 align="left"> <button class="btn btn-primary">Nouveau</button></h4></a>
 	<div class="table-responsive">

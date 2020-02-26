@@ -106,7 +106,11 @@ class candidat_model extends CI_Model{
 		$query="SELECT * FROM parcours ORDER BY parc_nom ASC";
 		return $this->db->query($query)->result();
 	}
+	public function recherche($key){
+    $this->db->like('nom_cand',$key);
+    $query=$this->db->get('candidat');
+    return $query->result();
 
-
+  }
 }
 

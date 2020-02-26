@@ -14,6 +14,16 @@ class Mention extends CI_Controller{
 		$this->load->view('mention/liste_mention',$data);
 		$this->load->view('menu_import/footer');
 	}
+	public function recherche(){
+		$key=$this->input->post('motchermention');
+  		$data['data']=$this->m->recherche($key);
+  		$this->load->view('menu_import/head');
+  		$this->load->view('menu_import/header');
+  		$this->load->view('menu_import/menu-gauche');
+  		$this->load->view('menu_import/menu-centre');
+  		$this->load->view('mention/liste_mention', $data);
+  		$this->load->view('menu_import/footer');
+	}
 	 public function ajout(){
 		$this->load->view('menu_import/head');
   		$this->load->view('menu_import/header');
