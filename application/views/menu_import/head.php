@@ -6,6 +6,8 @@
     <link rel="shortcut icon" href="<?php echo base_url() ?>asset/image/inspc.jpg"/>
     <!-- //////////////////////// CSS -->
     <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/css/styles.css"/><!-- MA STYLES.CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/css/styles_login.css"/><!-- MA STYLES.CSS-->
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url() ?>asset/css/font-awesome/css/font-awesome.min.css"/><!-- MA STYLES.CSS-->
     <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/bootstrap.min.css" media="screen"/><!-- BOOTSTRAP-->
     <link href="<?php echo base_url() ?>asset/css/responsive.bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="<?php echo base_url() ?>asset/css/jquery-ui-themes-1.12.1/jquery-ui.css" rel="stylesheet" media="screen"/>
@@ -13,9 +15,9 @@
     <!-- ////////////////// END CSS -->
 
     <!-- //////////////////// JS -->
-    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script><!--script -->
-    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.js"></script><!-- BOOTSTRAP-->
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.min.js"></script><!-- BOOTSTRAP-->
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/ui/datepicker.min.js"></script>
 

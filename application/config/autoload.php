@@ -48,7 +48,7 @@ $autoload['libraries'] = array('database','email','session','form_validation');
 $autoload['drivers'] = array();
 
 
-$autoload['helper'] = array('url','file');
+$autoload['helper'] = array('url','file', 'form');
 
 
 $autoload['config'] = array();
