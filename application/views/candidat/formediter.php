@@ -4,13 +4,13 @@
 	$req_centre ="SELECT * FROM centredexamen ORDER BY centre_lieu ASC";
 	$res_centre = mysqli_query($conn,$req_centre) or die(mysqli_error($conn));
 ?>
-<?php 
+<?php
 	$conn=mysqli_connect("localhost","root","","resulatconcours");
 	$req_parcours="SELECT * FROM parcours ORDER BY parc_nom ASC";
 	$res_parcours=mysqli_query($conn,$req_parcours) or die(mysqli_error($conn));
  ?>
 <form method="post" action="<?= base_url('Candidat/modifier'); ?> " >
-	<input type="hidden" value="<?= $data->cand_id; ?>" name="txt_hidden"> 
+	<input type="hidden" value="<?= $data->cand_id; ?>" name="txt_hidden">
 	<div class="row">
 	<legend>Formulaire candidat</legend>
 	<section class="col-md-6">
@@ -129,7 +129,7 @@
 		 </div>
 		 <div class="form-group">
 			<label for="anne_acc">Année Accadémique :</label>
-			<input id="anne_acc" type="date" name="anne_acc" class="form-control required" value="<?= $data->anne_acc; ?>">
+			<input id="anne_acc" type="year" name="anne_acc" class="form-control required" value="<?= $data->anne_acc; ?>">
 		 </div>
     </section>
     </div>

@@ -19,7 +19,7 @@
 			<label for="cand_lieu_naiss">Lieu de naissance :</label>
 		    <input id="cand_lieu_naiss" type="text" name="cand_lieu_naiss" class="form-control required">
 		</div>
-	</div> 
+	</div>
 	<div class="form-group">
 		<label for="cin_cand">CIN : </label>
 		<input id="cin_cand" type="text" name="cin_cand" class="form-control required">
@@ -114,7 +114,7 @@
 		 </div>
 		  <div class="form-group">
 			<label for="  anne-acc">Année Accademique :</label>
-			<input id="  anne_acc" type="date" name="anne_acc" class="form-control required">
+			<input id="  anne_acc" type="year" name="anne_acc" class="form-control required">
 		 </div>
     </section>
     </div>

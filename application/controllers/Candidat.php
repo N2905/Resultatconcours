@@ -37,7 +37,7 @@ class Candidat extends CI_Controller {
  	$this->load->view('menu_import/footer');
  }
  public function save(){
- 	$result = $this-> m->save();
+ 	$result = $this->m->save();
  	redirect('/Candidat/index');
  }
  public function editer($cand_id){
@@ -59,16 +59,6 @@ class Candidat extends CI_Controller {
  	redirect('Candidat/index');
 
  }
- public function listeCandidat(){  
-
-    $data['datalistes']= $this->m->listeCandidat(); 
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
-    $this->load->view('liste/listecandidat', array('datalistes'=>$this->m->listeCandidat(),'teste'=>'tets'));
-    $this->load->view('menu_import/footer');
-  }
  }
-	
+
 
