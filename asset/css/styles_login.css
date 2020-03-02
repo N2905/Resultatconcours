@@ -44,12 +44,15 @@
     }
   }
 }
+#mainConnect i{
+  font-size: 15px;
+}
 #login-box-inner {
   background: #fff;
   @include border-radius(0 0 $border-radius-base $border-radius-base);
   border: 1px solid #e1e1e1;
   border-bottom-width: 5px;
-  padding: 40px 25px;
+  padding: 25px 25px;
 
   &.with-heading {
     padding-top: 20px;
