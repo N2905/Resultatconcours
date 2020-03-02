@@ -8,12 +8,12 @@
 			<div class="cont-rechercher">
 			<div class="input-group col-lg-5">
 		    <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motchercentre">
-		    <span class="input-group-btn"> 
+		    <span class="input-group-btn">
 		      <button class="btn btn-success" type="submit">Réchercher</button>
 		    </span>
 		  </div>
 		</div>
-	
+
 </form>
 <legend>Liste des Centres</legend>
  <a href="<?php echo base_url('Centre/ajout')?>"><button class="btn btn-primary" style="text-align: left">Nouveau</button></a>
@@ -31,15 +31,15 @@
 			<?php foreach ($data as $centrejoint) {?>
  		<tr>
  		     <td><?php echo $centrejoint->centre_id; ?></td>
- 			<td><?php echo $centrejoint->centre_lieu; ?></td> 
+ 			<td><?php echo $centrejoint->centre_lieu; ?></td>
  			<td>
- 				<a href="<?=base_url('Centre/editer/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
- 				<a href="<?=base_url('Centre/delete/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+ 				<a href="<?=base_url('Centre/editer/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-pencil btn btn-primary"></span></a>
+ 				<a href="<?=base_url('Centre/delete/' .$centrejoint->centre_id); ?>"><span class="glyphicon glyphicon-remove btn btn-danger btn btn-danger"></span></a>
  			</td>
  		</tr>
  		<?php }?>
  		<?php }?>
- 		
+
  	</tbody>
  </table>
  </div>

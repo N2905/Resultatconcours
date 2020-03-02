@@ -20,7 +20,7 @@ class User extends CI_Controller
 
 	public function login_post(){
 		$username = $this->input->post('username');
-		$password = $this->input->post('password');
+    $password = $this->input->post('password');
 
 		$this->load->model('user_model', 'auth');
 		$this->load->library('form_validation');
@@ -34,9 +34,11 @@ class User extends CI_Controller
             {
             	$response_val = $this->auth->login_user($username, $password);
             	if($response_val == true){
-            		$val = $this->auth->get_user_info($username);
+                $val = $this->auth->get_user_info($username);
+            		#$nom = $this->auth->get_user_info($username);
             		$this->session->set_userdata($val[0]);
-            		$this->session->set_userdata('login', 'true');
+                $this->session->set_userdata('login', 'true');
+            		#$this->session->set_userdata('nom', $nom[0]);
             		redirect('/');
 
             	}elseif($response_val == false){

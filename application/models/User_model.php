@@ -19,7 +19,7 @@ class User_model extends CI_Model
 	}
 
 	public function get_user_info($username){
-		$query =$this->db->query("SELECT id,username,email FROM users WHERE username='$username'");
+		$query =$this->db->query("SELECT id,username,email,nom,prenom FROM users WHERE username='$username'");
 		if($query->num_rows() == 1){
 			$userinfo = $query->result_array();
 			return $userinfo;

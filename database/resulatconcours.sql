@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1:3306
--- Généré le :  Dim 01 mars 2020 à 15:54
+-- Généré le :  lun. 02 mars 2020 à 20:55
 -- Version du serveur :  5.7.21
 -- Version de PHP :  5.6.35
 
@@ -201,15 +201,19 @@ CREATE TABLE IF NOT EXISTS `users` (
   `username` varchar(30) NOT NULL,
   `email` varchar(30) NOT NULL,
   `password` text NOT NULL,
+  `nom` varchar(50) DEFAULT NULL,
+  `prenom` varchar(50) DEFAULT NULL,
+  `role` tinyint(4) NOT NULL DEFAULT '0',
+  `status` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 
 --
 -- Déchargement des données de la table `users`
 --
 
-INSERT INTO `users` (`id`, `username`, `email`, `password`) VALUES
-(1, 'admin', 'arbandry@gmail.com', '21232f297a57a5a743894a0e4a801fc3');
+INSERT INTO `users` (`id`, `username`, `email`, `password`, `nom`, `prenom`, `role`, `status`) VALUES
+(1, 'admin', 'arbandry@gmail.com', '21232f297a57a5a743894a0e4a801fc3', 'NELLY', 'Bernard', 0, '');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

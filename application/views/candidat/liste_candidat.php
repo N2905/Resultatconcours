@@ -65,8 +65,8 @@
         <!-- <td><?php echo $cand->anne_acc;?></td> -->
 
         <td>
-         <a href="<?=base_url('Candidat/editer/' .$cand->cand_id);?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
-         <a href="<?=base_url('Candidat/delete/' .$cand->cand_id);?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+         <a href="<?=base_url('Candidat/editer/' .$cand->cand_id);?>"><span class="glyphicon glyphicon-pencil btn btn-primary"></span></a>
+         <a href="<?=base_url('Candidat/delete/' .$cand->cand_id);?>"><span class="glyphicon glyphicon-remove btn btn-danger btn btn-danger"></span></a>
        </td>
      </tr>
    <?php }?>

@@ -30,8 +30,8 @@
 						<td><?php echo $parcoursjoint->parc_nom;?></td>
 						<td><?php echo $parcoursjoint->parc_diplome;?></td>
 						<td>
-							<a href="<?=base_url('Parcours/editer/'. $parcoursjoint->parc_id);?>"><span class="glyphicon glyphicon-edit btn-info btn btn-primary"></span></a>
-							<a href="<?=base_url('Parcours/delete/'.$parcoursjoint->parc_id)?>"><span class="glyphicon glyphicon-minus btn btn-default btn btn-danger"></span></a>
+							<a href="<?=base_url('Parcours/editer/'. $parcoursjoint->parc_id);?>"><span class="glyphicon glyphicon-pencil btn btn-primary"></span></a>
+							<a href="<?=base_url('Parcours/delete/'.$parcoursjoint->parc_id)?>"><span class="glyphicon glyphicon-remove btn btn-danger btn btn-danger"></span></a>
 						</td>
 					</tr>
 				<?php }?>
