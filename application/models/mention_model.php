@@ -54,5 +54,10 @@ class mention_model extends CI_Model{
 			return false;
 		}
 	}
+	public function recherche($key){
+		$this->db->like('ment_nom',$key);
+		$query=$this->db->get('mention');
+		return $query->result();
+	}
 }
 

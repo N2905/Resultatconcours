@@ -12,10 +12,14 @@
       </div>
     </div>
     <nav class="navbar navbar-default" role="navigation">
-       
-            
+      <div>
+            <ul class="nav navbar-nav">
+            <li >
+                <a href="<?php echo base_url() ?>/accueil">Accueil</a>
+            </li>
+            </ul>
             <ul class="nav navbar-nav navbar-right" style="margin-right: 10px;">
-                <li><a href="<?php echo base_url() ?>index.php/login/logout">Déconnexion</a></li>
+                <li><a href="<?php echo base_url() ?>/logout">Déconnexion</a></li>
             </ul>
         </div>
     </nav>

@@ -12,16 +12,16 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url() ?>index.php/mention">Mention</a>
+                            <a href="<?php echo base_url()?>mention">Mention</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="<?php echo base_url() ?>index.php/parcours" >Parcours</a>
+                            <a href="<?php echo base_url()?>parcours" >Parcours</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="<?php echo base_url() ?>index.php/centre">Centre</a>
+                            <a href="<?php echo base_url()?>centre">Centre</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="<?php echo base_url() ?>index.php/epreuve">Epreuve</a>
+                            <a href="<?php echo base_url()?>epreuve">Epreuve</a>
                         </li>
                     </ul>
                 </div>
@@ -31,7 +31,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="">
-                       Misé à jours candidat(e)
+                       Mise à jours candidat(e)
                     </a>
                 </h4>
             </div>
@@ -39,10 +39,10 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url() ?>index.php/candidat" >Candidat</a>
+                            <a href="<?php echo base_url()?>candidat" >Candidat</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="../liste/listeEtatConger.php" >Etat de congé</a>
+                            <a href="<?php echo base_url()?>candidat/listeCandidat" >liste candidat</a>
                         </li>
                     </ul>
                 </div>
@@ -52,7 +52,7 @@
             <div class="panel-heading" role="tab" id="headingThree">
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                        Traitement
+                        Traitement note
                     </a>
                 </h4>
             </div>
@@ -60,10 +60,10 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="../prendconger/listePrendConger.php" >Congé</a>
+                            <a href="<?php echo base_url()?>note/saisie" >Saisie</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="../prendpermission/listePrendPermission.php" >Permission</a>
+                            <a href="#" >Modification</a>
                         </li>
                     </ul>
                 </div>

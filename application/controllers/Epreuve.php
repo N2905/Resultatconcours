@@ -16,12 +16,23 @@ class Epreuve extends CI_Controller {
  	  $this->load-> view('epreuve/liste_epreuve',$data);
  	  $this->load->view('menu_import/footer');
  }
+ public function recherche(){
+  $key=$this->input->post('motcherepre');
+  $data['data']=$this->m->recherche($key);
+  $this->load->view('menu_import/head');
+  $this->load->view('menu_import/header');
+  $this->load->view('menu_import/menu-gauche');
+  $this->load->view('menu_import/menu-centre');
+  $this->load->view('epreuve/liste_epreuve', $data);
+  $this->load->view('menu_import/footer');
+ }
  public function ajout(){
+    $data['parcoursjoin']= $this->m->parcoursjoins();
  	  $this->load->view('menu_import/head');
     $this->load->view('menu_import/header');
     $this->load->view('menu_import/menu-gauche');
     $this->load->view('menu_import/menu-centre');
- 	  $this->load->view('epreuve/epreuveform');
+ 	  $this->load->view('epreuve/epreuveform',$data);
     $this->load->view('menu_import/footer');
  }
  public function save(){
@@ -29,6 +40,7 @@ class Epreuve extends CI_Controller {
  	redirect('/Epreuve/index');
  }
  public function editer($epre_id){
+  $data['parcoursjoin']= $this->m->parcoursjoins();
  	$data['data']=$this->m->getEpreById($epre_id);
  	$this->load->view('menu_import/head');
   $this->load->view('menu_import/header');

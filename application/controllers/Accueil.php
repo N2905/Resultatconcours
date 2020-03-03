@@ -5,6 +5,11 @@ class Accueil extends CI_Controller {
 
 	public function index()
 	{
+
+    if($this->session->login != 'true'){
+      redirect('login');
+    }
+
 		$this->load->view('menu_import/head');
 		$this->load->view('menu_import/header');
 		$this->load->view('menu_import/menu-gauche');

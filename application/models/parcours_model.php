@@ -58,5 +58,14 @@ class parcours_model extends CI_Model{
 			return false;
 		}
 	}
+	public function mentionjoin(){
+		$query="SELECT * FROM mention ORDER BY ment_nom ASC";
+		 return $this->db->query($query)->result();
+	}
+	public function recherche($key){
+		$this->db->like('parc_nom',$key);
+		$query=$this->db->get('parcours');
+		return $query->result();
+	}
 
 }

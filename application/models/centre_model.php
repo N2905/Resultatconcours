@@ -54,5 +54,12 @@ class centre_model extends CI_Model{
 			return false;
 		}
 	}
+	public function recherche($key){
+		$this->db->like('centre_lieu',$key);
+		$query=$this->db->get('centredexamen');
+		return $query->result();
+
+
+	}
 }
 
