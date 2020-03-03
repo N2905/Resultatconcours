@@ -7,7 +7,7 @@ class Pdf extends CI_Controller {
     $this->load->model('candidat_model', 'm');
   }
 
-  public function index()
+  public function pdfCandidatListe()
   {
     $this->load->view('pdf/pdf', array("candidats" => $this->m->getCandidat() ));
   }

@@ -14,51 +14,57 @@ class Candidat extends CI_Controller {
   	$this->load->view('menu_import/menu-gauche');
   	$this->load->view('menu_import/menu-centre');
   	$this->load-> view('candidat/liste_candidat',$data);
- 	  $this->load->view('menu_import/footer');
- }
- public function recherche(){
-  $key=$this->input->post('motcher');
-  $data['data']=$this->m->recherche($key);
-  $this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
-  $this->load->view('candidat/liste_candidat', $data);
-  $this->load->view('menu_import/footer');
- }
- public function ajout(){
-  $data['centrejoint']= $this->m->centrejoint();
-  $data['parcoursjoint']=$this->m->parcoursjoint();
- 	$this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
- 	$this->load-> view('candidat/candidatform',$data);
- 	$this->load->view('menu_import/footer');
- }
- public function save(){
- 	$result = $this->m->save();
- 	redirect('/Candidat/index');
- }
- public function editer($cand_id){
- 	$data['data']= $this->m->getCandById($cand_id);
- 	$this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
- 	$this->load->view('candidat/formediter',$data);
- 	$this->load->view('menu_import/footer');
- }
- public function modifier(){
- 	$resultat= $this->m->modifier();
- 	redirect('Candidat/index');
- }
+    $this->load->view('menu_import/footer');
+  }
 
- public function delete($cand_id){
- 	$result= $this->m->delete($cand_id);
- 	redirect('Candidat/index');
+  public function listeCandidat(){
+    $this->index();
+  }
 
- }
- }
+  public function recherche(){
+    $key=$this->input->post('motcher');
+    $data['data']=$this->m->recherche($key);
+    $this->load->view('menu_import/head');
+    $this->load->view('menu_import/header');
+    $this->load->view('menu_import/menu-gauche');
+    $this->load->view('menu_import/menu-centre');
+    $this->load->view('candidat/liste_candidat', $data);
+    $this->load->view('menu_import/footer');
+  }
+  public function ajout(){
+    $data['centrejoint']= $this->m->centrejoint();
+    $data['parcoursjoint']=$this->m->parcoursjoint();
+    $this->load->view('menu_import/head');
+    $this->load->view('menu_import/header');
+    $this->load->view('menu_import/menu-gauche');
+    $this->load->view('menu_import/menu-centre');
+    $this->load-> view('candidat/candidatform',$data);
+    $this->load->view('menu_import/footer');
+  }
+  public function save(){
+    $result = $this->m->save();
+    redirect('/Candidat/index');
+  }
+  public function editer($cand_id){
+    $data['data']= $this->m->getCandById($cand_id);
+    $this->load->view('menu_import/head');
+    $this->load->view('menu_import/header');
+    $this->load->view('menu_import/menu-gauche');
+    $this->load->view('menu_import/menu-centre');
+    $this->load->view('candidat/formediter',$data);
+    $this->load->view('menu_import/footer');
+  }
+  public function modifier(){
+    $resultat= $this->m->modifier();
+    redirect('Candidat/index');
+  }
+
+  public function delete($cand_id){
+    $result= $this->m->delete($cand_id);
+    redirect('Candidat/index');
+
+  }
+
+}
 
 

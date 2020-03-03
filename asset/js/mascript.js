@@ -1,4 +1,7 @@
 jQuery(document).ready(function($){
+    // DataTable bootstrap
+    $('#tableEtudiant').DataTable();
+
     // HIDE ENTETE
     // $("#hide_entete").css({'display':'none'});
     // $("#hide_entete_index").css({'display':'none'});
