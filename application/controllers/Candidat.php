@@ -8,7 +8,7 @@ class Candidat extends CI_Controller {
 	}
 
   function index(){
-  	$data['data'] = $this-> m->getCandidat();
+  	$data['data'] = $this->m->getCandidat();
   	$this->load->view('menu_import/head');
   	$this->load->view('menu_import/header');
   	$this->load->view('menu_import/menu-gauche');
@@ -17,8 +17,19 @@ class Candidat extends CI_Controller {
     $this->load->view('menu_import/footer');
   }
 
-  public function listeCandidat(){
-    $this->index();
+  public function listeCandidat($idparcours = null){
+    if ( $idparcours !== NULL) {      
+      $data['data'] = $this->m->listeCandidat($idparcours);
+    }else{
+       $data['data'] = $this->m->getCandidat();
+    }
+
+    $this->load->view('menu_import/head');
+    $this->load->view('menu_import/header');
+    $this->load->view('menu_import/menu-gauche');
+    $this->load->view('menu_import/menu-centre');
+    $this->load-> view('candidat/liste_candidat',$data);
+    $this->load->view('menu_import/footer');
   }
 
   public function recherche(){

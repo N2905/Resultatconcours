@@ -31,7 +31,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="">
-                       Mise à jours candidat(e)
+                       Traitement candidat(e)
                     </a>
                 </h4>
             </div>
@@ -42,7 +42,7 @@
                             <a href="<?php echo base_url()?>candidat" >Candidat</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>candidat/listeCandidat" >liste candidat</a>
+                            <a href="#" data-toggle="modal" data-target="#_choix_parcours">liste candidat</a><!-- <?php #echo base_url()?>candidat/listeCandidat -->
                         </li>
                     </ul>
                 </div>
@@ -71,3 +71,4 @@
         </div>
     </div>
 </div><!----menu-gauche.php-->
+<?php $this->view('/dialog/dialog_candidat'); ?>

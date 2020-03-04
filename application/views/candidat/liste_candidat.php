@@ -9,7 +9,7 @@
   </div>
 </div>
 </form>
-<div class="table-responsive">
+<div class="">
  <table align="center" class="table table-bordered" id="tableEtudiant">
 
  	<thead>

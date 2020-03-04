@@ -86,8 +86,12 @@ class candidat_model extends CI_Model{
 
 		 return false;
 	}
-	public function listeCandidat(){
-		$query = "SELECT c.cand_id,c.nom_cand,c.prenom_cand,c.email_cand,c.tel_cand,c.anne_acc,ce.centre_lieu,p.parc_nom FROM candidat c,centredexamen ce,parcours p WHERE c.centre_id=ce.centre_id AND c.parc_id=p.parc_id";
+	public function listeCandidat($parcours = NULL){
+		$andQuery = NULL;
+		if ( !is_null($parcours) ) 
+			$andQuery = " AND p.parc_id = $parcours";
+
+		$query = "SELECT c.*,ce.*,p.* FROM candidat c,centredexamen ce,parcours p WHERE c.centre_id=ce.centre_id AND c.parc_id=p.parc_id $andQuery";  
 		return $this->db->query($query)->result();
 	}
 	public function centrejoint(){
