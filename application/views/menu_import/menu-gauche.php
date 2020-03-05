@@ -42,7 +42,10 @@
                             <a href="<?php echo base_url()?>candidat" >Candidat</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="#" data-toggle="modal" data-target="#_choix_parcours">liste candidat</a><!-- <?php #echo base_url()?>candidat/listeCandidat -->
+                            <a href="<?php echo base_url()?>candidat/listeCandidat">Liste des candidats</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" data-toggle="modal" data-target="#_choix_parcours">Liste des candidats par critère</a>
                         </li>
                     </ul>
                 </div>

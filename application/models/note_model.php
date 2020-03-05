@@ -13,9 +13,23 @@ class note_model extends CI_Model{
 
 	}
 
+	public function getNotesEtudiants($cand_id = null){
+		$_andwhere = "";
+		if(!is_null($cand_id))
+			$_andwhere = " AND c.cand_id=".$cand_id;
+		else
+			$_andwhere = " GROUP BY c.cand_id";
+
+		$moyenne = $this->db->query("SELECT c.*, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id  $_andwhere ORDER BY moyenne DESC" );
+
+		if(!is_null($cand_id))
+			return $moyenne->result()[0];
+
+		return $moyenne->result();
+	}
+
 	public function getMoyenne($cand_id){
-		$moyenne = $this->db->query("SELECT c.cand_id, c.nom_cand, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id AND c.cand_id=".$cand_id);
-		return $moyenne->result()[0];
+		return $this->getNotesEtudiants($cand_id);
 	}
 
 }

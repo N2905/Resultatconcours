@@ -10,7 +10,7 @@
 </div>
 </form>
 <div class="">
- <table align="center" class="table table-bordered" id="tableEtudiant">
+ <table align="center" class="table table-bordered" id="_useDataTable">
 
  	<thead>
  		<tr>

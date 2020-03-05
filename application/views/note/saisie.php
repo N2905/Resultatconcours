@@ -1,9 +1,9 @@
-
+<legend>Saisie note</legend>
 <div class="table-responsive">
-	<table class="table table-border" align="center">
+	<table class="table table-border" align="center"><!--  id="_useDataTable" -->
 		<thead>
 			<tr>
-				<th>ID</th>
+				<th>#</th>
 				<th>Nom</th>
 				<th>Prénom</th>
 				<th class="text-center">Année</th>
@@ -12,19 +12,19 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($candidats->getCandidat() as $candidat){?>
+			<?php foreach ($notes->getNotesEtudiants() as $index => $candidat){?>
 				<tr>
-					<td><?= $candidat->cand_id ?></td>
+					<td><?= ($index+1) ?></td>
 					<td><?= $candidat->nom_cand ?></td>
 					<td><?= $candidat->prenom_cand ?></td>
 					<td class="text-center"><?= $candidat->anne_acc ?></td>
 					<td>
 						<div class="card">
-						    <h3 class="text-center"><?= round($notes->getMoyenne($candidat->cand_id)->moyenne,2); ?></h3>
+						    <h3 id="avg_<?= $candidat->cand_id; ?>" class="text-center"><?= round($candidat->moyenne,2); ?></h3>
 						</div>
 					</td>
 					<td>
-						<form method="post" action="<?= base_url('Note/modifier/').$candidat->cand_id;?>" class="col-sm-12">
+						<form method="post" id="formcand_<?= $candidat->cand_id; ?>" action="<?= base_url('Note/modifier/').$candidat->cand_id;?>" class="col-sm-12">
 							<?php
 							foreach ($candidats->getMatiereInParcours(null, $candidat->cand_id) as $key => $note){?>
 								<div class="form-group row">
@@ -36,8 +36,7 @@
 								</div>
 							<?php } ?>
 							<div class="text-center" style="float: right;">
-						    <button type="submit" class="btn btn-primary">Enregistrer</button>
-						    <a href="#" class="btn btn-default">PDF</a>
+						    <button type="button" class="btn btn-primary" onclick="saveNote(this);">Enregistrer</button>
 							</div>
 						</form>
 					</td>

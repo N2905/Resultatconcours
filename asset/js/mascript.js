@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     // DataTable bootstrap
-    $('#tableEtudiant').DataTable();
+    $('#_useDataTable').DataTable();
 
     // HIDE ENTETE
     // $("#hide_entete").css({'display':'none'});
@@ -187,11 +187,17 @@ function controleChampVide(){
 
 
     //
-    function formatPhone(obj) {
-        // var numbers = obj.value.replace(/\D/g, ''),
-        // char = { 0: '(', 3: ') ', 6: ' - ' };
-        //     obj.value = '';
-        //     for (var i = 0; i < numbers.length; i++) {
-        //         obj.value += (char[i] || '') + numbers[i];
-        // }
+    function saveNote(obj) {
+        var form = $(obj).parents('[id^=formcand_]');//.substr(9)
+        var url  = $(form).attr('action');
+        var id_cand = $(form).attr('id').substr(9)
+        var data  = $(form).serialize();
+        $.ajax({
+          'method' : 'POST',
+          'url' : url,
+          'data' : data,
+          'success' : function(contenu){
+              $("#avg_"+id_cand).text(contenu);
+          }
+      })
     }

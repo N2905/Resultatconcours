@@ -9,7 +9,7 @@ class Note extends CI_Controller{
 
   public function saisie(){
     $data['candidats']  = $this->_mcand;
-    $data['notes']  = $this->_mnote;
+    $data['notes']      = $this->_mnote;
     $this->load->view('menu_import/head');
     $this->load->view('menu_import/header');
     $this->load->view('menu_import/menu-gauche');
@@ -22,7 +22,8 @@ class Note extends CI_Controller{
     foreach ( $this->_mcand->getMatiereInParcours(null, $cand_id) as $index => $note)
       $this->_mnote->modifier($index);
 
-    redirect('note/saisie');
+    echo round($this->_mnote->getMoyenne($cand_id)->moyenne, 2);
   }
+
 
 }
