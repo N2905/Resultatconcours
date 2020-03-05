@@ -7,14 +7,14 @@ class Note extends CI_Controller{
     $this->load->model('note_model', '_mnote');#
   }
 
-  public function saisie(){
+  public function saisie($parc_id){
     $data['candidats']  = $this->_mcand;
-    $data['notes']      = $this->_mnote;
+    $data['notes']      = $this->_mnote->getNotesEtudiants(null, $parc_id, Date('Y'));
     $this->load->view('menu_import/head');
     $this->load->view('menu_import/header');
     $this->load->view('menu_import/menu-gauche');
     $this->load->view('menu_import/menu-centre');
-    $this->load->view('note/saisie',$data);#
+    $this->load->view('note/saisie',$data);
     $this->load->view('menu_import/footer');
   }
 

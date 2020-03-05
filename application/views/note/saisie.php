@@ -12,7 +12,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<?php foreach ($notes->getNotesEtudiants() as $index => $candidat){?>
+			<?php foreach ($notes as $index => $candidat){?>
 				<tr>
 					<td><?= ($index+1) ?></td>
 					<td><?= $candidat->nom_cand ?></td>

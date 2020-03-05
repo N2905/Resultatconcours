@@ -63,7 +63,7 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>note/saisie" >Saisie</a>
+                            <a href="#" data-toggle="modal" data-target="#_choix_note">Saisie</a><!-- <?php #echo base_url()?>note/saisie -->
                         </li>
                         <li class="list-group-item">
                             <a href="#" >Modification</a>
@@ -75,3 +75,4 @@
     </div>
 </div><!----menu-gauche.php-->
 <?php $this->view('/dialog/dialog_candidat'); ?>
+<?php $this->view('/dialog/dialog_note'); ?>
