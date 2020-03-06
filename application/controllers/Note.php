@@ -4,12 +4,14 @@ class Note extends CI_Controller{
 	function __construct(){
 		parent:: __construct();
     $this->load->model('candidat_model', '_mcand');#note_model
-    $this->load->model('note_model', '_mnote');#
+    $this->load->model('note_model', '_mnote');
+    $this->load->model('parcours_model', '_mparcours');//model parcours
   }
 
   public function saisie($parc_id){
     $data['candidats']  = $this->_mcand;
     $data['notes']      = $this->_mnote->getNotesEtudiants(null, $parc_id, Date('Y'));
+    $data['parcours']   = $this->_mparcours->getParcById($parc_id);    
     $this->load->view('menu_import/head');
     $this->load->view('menu_import/header');
     $this->load->view('menu_import/menu-gauche');

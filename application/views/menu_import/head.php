@@ -15,7 +15,7 @@
     <!-- ////////////////// END CSS -->
 
     <!-- //////////////////// JS -->
-    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script><!--script -->
     <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.min.js"></script><!-- BOOTSTRAP-->
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script>
