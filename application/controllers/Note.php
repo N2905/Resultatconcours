@@ -11,13 +11,10 @@ class Note extends CI_Controller{
   public function saisie($parc_id){
     $data['candidats']  = $this->_mcand;
     $data['notes']      = $this->_mnote->getNotesEtudiants(null, $parc_id, Date('Y'));
-    $data['parcours']   = $this->_mparcours->getParcById($parc_id);    
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
+    $data['parcours']   = $this->_mparcours->getParcById($parc_id);
+    load_views();
     $this->load->view('note/saisie',$data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
 
   public function modifier($cand_id){
@@ -27,5 +24,13 @@ class Note extends CI_Controller{
     echo round($this->_mnote->getMoyenne($cand_id)->moyenne, 2);
   }
 
+  public function liste(){
+    $data['notes']      = $this->_mnote->listeNotesCandidats();
+    $data['parcours']   = $this->_mparcours;
+    // var_dump($this->_mparcours->getParcById(2));die;
+    load_views();
+    $this->load->view('note/listenote',$data);
+    load_views(true);
+  }
 
 }

@@ -63,10 +63,10 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="#" data-toggle="modal" data-target="#_choix_note">Saisie</a><!-- <?php #echo base_url()?>note/saisie -->
+                            <a href="#" data-toggle="modal" data-target="#_choix_note">Saisie note</a><!-- -->
                         </li>
                         <li class="list-group-item">
-                            <a href="#" >Modification</a>
+                            <a href=" <?php echo base_url()?>note/liste" >Tous les notes</a>
                         </li>
                     </ul>
                 </div>

@@ -9,48 +9,36 @@ class Candidat extends CI_Controller {
 
   function index(){
   	$data['data'] = $this->m->getCandidat();
-  	$this->load->view('menu_import/head');
-  	$this->load->view('menu_import/header');
-  	$this->load->view('menu_import/menu-gauche');
-  	$this->load->view('menu_import/menu-centre');
+  	load_views();
   	$this->load-> view('candidat/liste_candidat',$data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
 
   public function listeCandidat($idparcours = null){
-    if ( $idparcours !== NULL) {      
+    if ( $idparcours !== NULL) {
       $data['data'] = $this->m->listeCandidat($idparcours);
     }else{
        $data['data'] = $this->m->getCandidat();
     }
 
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
+    load_views();
     $this->load-> view('candidat/liste_candidat',$data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
 
   public function recherche(){
     $key=$this->input->post('motcher');
     $data['data']=$this->m->recherche($key);
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
+    load_views();
     $this->load->view('candidat/liste_candidat', $data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
   public function ajout(){
     $data['centrejoint']= $this->m->centrejoint();
     $data['parcoursjoint']=$this->m->parcoursjoint();
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
+    load_views();
     $this->load-> view('candidat/candidatform',$data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
   public function save(){
     $result = $this->m->save();
@@ -58,12 +46,9 @@ class Candidat extends CI_Controller {
   }
   public function editer($cand_id){
     $data['data']= $this->m->getCandById($cand_id);
-    $this->load->view('menu_import/head');
-    $this->load->view('menu_import/header');
-    $this->load->view('menu_import/menu-gauche');
-    $this->load->view('menu_import/menu-centre');
+    load_views();
     $this->load->view('candidat/formediter',$data);
-    $this->load->view('menu_import/footer');
+    load_views(true);
   }
   public function modifier(){
     $resultat= $this->m->modifier();
