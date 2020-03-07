@@ -36,8 +36,21 @@ class note_model extends CI_Model{
 		return $this->getNotesEtudiants($cand_id);
 	}
 
-	public function listeNotesCandidats(){
-		$note = $this->db->query("SELECT c.*, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id  GROUP BY c.cand_id ORDER BY moyenne DESC" );
+	public function listeNotesCandidats($id, $type = null){
+		$and_where = "";
+		$anne = Date('Y');
+		switch ($type) {
+			case 'parcours':
+				$and_where = " AND c.parc_id = $id AND c.anne_acc = $anne";
+				break;
+			case 'centre':
+				$and_where = " AND c.centre_id = $id";
+				break;
+			case 'anne':
+				$and_where = " AND c.anne_acc = $id";
+				break;
+		}
+		$note = $this->db->query("SELECT c.*, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id $and_where GROUP BY c.cand_id ORDER BY moyenne DESC" );
 		return $note->result();
 	}
 

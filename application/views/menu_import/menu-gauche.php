@@ -74,5 +74,6 @@
         </div>
     </div>
 </div><!----menu-gauche.php-->
+<!-- dialog -->
 <?php $this->view('/dialog/dialog_candidat'); ?>
 <?php $this->view('/dialog/dialog_note'); ?>

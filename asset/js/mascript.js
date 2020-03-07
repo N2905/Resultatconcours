@@ -1,6 +1,6 @@
 jQuery(document).ready(function($){
     // DataTable bootstrap
-    $('#_useDataTable').DataTable();
+    $('#_useDataTable,[id^=_tabparcours],[id^=_tabcentre],[id^=_tabanne]').DataTable();
 
     // HIDE ENTETE
     // $("#hide_entete").css({'display':'none'});
@@ -200,4 +200,9 @@ function controleChampVide(){
               $("#avg_"+id_cand).text(contenu);
           }
       })
+    }
+
+    function showTabs(elt){
+        let parent = $(elt).parents('.nav.nav-tabs').next('#_content');
+        let id = $(elt).substr(1);
     }

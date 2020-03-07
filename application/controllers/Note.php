@@ -3,8 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Note extends CI_Controller{
 	function __construct(){
 		parent:: __construct();
-    $this->load->model('candidat_model', '_mcand');#note_model
-    $this->load->model('note_model', '_mnote');
+    $this->load->model('candidat_model', '_mcand');//model candidat
+    $this->load->model('note_model', '_mnote');//model note
+    $this->load->model('centre_model', '_mcentre');//model centre
     $this->load->model('parcours_model', '_mparcours');//model parcours
   }
 
@@ -25,9 +26,10 @@ class Note extends CI_Controller{
   }
 
   public function liste(){
-    $data['notes']      = $this->_mnote->listeNotesCandidats();
+    $data['notes']      = $this->_mnote;
+    $data['centres']    = $this->_mcentre;
     $data['parcours']   = $this->_mparcours;
-    // var_dump($this->_mparcours->getParcById(2));die;
+    $data['candidats']  = $this->_mcand;
     load_views();
     $this->load->view('note/listenote',$data);
     load_views(true);
