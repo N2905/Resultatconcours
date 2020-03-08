@@ -129,8 +129,7 @@ class candidat_model extends CI_Model{
   public function getAnneAccademique(){
   	$this->db->select();
   	$this->db->from('candidat');
-  	$query = $this->db->group_by('anne_acc')->get();
-  	// var_dump($query->result());
+  	$query = $this->db->order_by('anne_acc','DESC')->group_by('anne_acc')->get();
   	return $query->result();
   }
 

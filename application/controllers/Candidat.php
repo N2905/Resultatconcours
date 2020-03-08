@@ -14,9 +14,10 @@ class Candidat extends CI_Controller {
     load_views(true);
   }
 
-  public function listeCandidat($idparcours = null){
-    if ( $idparcours !== NULL) {
-      $data['data'] = $this->m->listeCandidat($idparcours);
+  public function listeCandidat($parc_id = null){
+    if ( $parc_id !== NULL) {
+      $data['parc_id'] = $parc_id;
+      $data['data'] = $this->m->listeCandidat($parc_id);
     }else{
        $data['data'] = $this->m->getCandidat();
     }

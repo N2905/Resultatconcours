@@ -77,7 +77,16 @@
 <a href="<?php echo base_url('Candidat/ajout')?>">
   <button class="btn btn-primary" style="text-align: left">Nouveau</button>
 </a>
+<?php
+if(isset($parc_id)){
+?>
+<a href="<?php echo base_url('pdf/pdfCandidatListe/'.$parc_id)?>" target="_blanck">
+  <button class="btn btn-success" style="text-align: left">PDF</button>
+</a>
+<?php
+}else{ ?>
 <a href="<?php echo base_url('pdf/pdfCandidatListe')?>" target="_blanck">
   <button class="btn btn-success" style="text-align: left">PDF</button>
 </a>
+<?php } ?>
 </div>
