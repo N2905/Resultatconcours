@@ -39,7 +39,7 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>candidat" >Candidat</a>
+                            <a href="<?php echo base_url()?>candidat/ajout" >Saisie candidat</a>
                         </li>
                         <li class="list-group-item">
                             <a href="<?php echo base_url()?>candidat/listeCandidat">Liste des candidats</a>

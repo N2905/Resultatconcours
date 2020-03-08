@@ -20,6 +20,8 @@
     <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.min.js"></script><!-- BOOTSTRAP-->
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/ui/datepicker.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/blockUI.js"></script>
 
     <!-- //////////////////// END JS -->
     <!-- ///////////// MES SCRIPT -->

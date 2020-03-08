@@ -1,3 +1,14 @@
+.growlUI h2{
+  font-size: 15px !important;
+  margin: 5px;
+}
+.blockUI.blockMsg.blockPage{
+  width: 250px!important;
+}
+sup{
+  color: red;
+  font-weight: bold;
+}
 /*cadre bleu*/
 div.cadre{
 /*     margin-left: 100px; */
