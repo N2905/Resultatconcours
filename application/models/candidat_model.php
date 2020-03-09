@@ -87,7 +87,7 @@ class candidat_model extends CI_Model{
 		 return false;
 	}
 	public function listeCandidat($parcours = NULL){
-		$andQuery = NULL;
+    $andQuery = NULL;
 		if ( !is_null($parcours) )
 			$andQuery = " AND p.parc_id = $parcours";
 
@@ -134,4 +134,16 @@ class candidat_model extends CI_Model{
   }
 
 }
+/*
 
+
+
+    /**/
+    /*foreach ($this->getCandidat() as $value) {
+      foreach($this->getMatiereInParcours($value->parc_id) as $epreuve){
+        $fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> $value->anne_acc, 'cand_id'=>$value->cand_id,'epre_id'=>$epreuve->epre_id);
+        $this->db->insert('note', $fields_note);
+      }
+    }
+    die("oj");*/
+    /**/

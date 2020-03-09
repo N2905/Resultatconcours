@@ -76,7 +76,7 @@
             <div class="panel-heading" role="tab" id="headingFor">
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
-                        Resultat concours
+                        Resultat concours (admis)
                     </a>
                 </h4>
             </div>
@@ -90,6 +90,30 @@
                         ?>
                             <li class="list-group-item">
                                 <a href="<?php echo base_url()?>resultat/resultat/<?= $parcour->parc_id ?>"><?= $parcour->parc_nom ?></a><!-- -->
+                            </li>
+                        <?php } ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFive">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        Resultat concours (Liste d'attente)
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                <div>
+                    <ul class="list-group">
+                        <?php
+                            $CI   = &get_instance();
+                            $data = $CI->modal_model->getParcours();
+                            foreach ($data as $parcour) {
+                        ?>
+                            <li class="list-group-item">
+                                <a href="<?php echo base_url()?>resultat/resultat/<?= $parcour->parc_id ?>/liste_attente"><?= $parcour->parc_nom ?></a><!-- -->
                             </li>
                         <?php } ?>
                     </ul>

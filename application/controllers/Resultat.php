@@ -9,12 +9,13 @@ class Resultat extends CI_Controller{
     $this->load->model('parcours_model', '_mparcours');//model parcours
   }
 
-  public function resultat($id){
-    $data['resultats']  = $this->_mresultat;
-    $data['centres']    = $this->_mcentre;
-    $data['parcours']   = $this->_mparcours; 
-    $data['candidats']  = $this->_mcand;
-    $data['idparcours'] = $id;
+  public function resultat($id, $type_resultat = 'admis'){
+    $data['resultats']      = $this->_mresultat;
+    $data['type_resultat']  = $type_resultat;
+    $data['centres']        = $this->_mcentre;
+    $data['parcours']       = $this->_mparcours;
+    $data['candidats']      = $this->_mcand;
+    $data['idparcours']     = $id;
     load_views();
     $this->load->view('resultat/resultats',$data);
     load_views(true);
