@@ -1,3 +1,25 @@
+.growlUI h2{
+  font-size: 15px !important;
+  margin: 5px;
+}
+h3.subtitle{
+  text-align: center;
+}
+#hp_content_img li {
+    /*height: 400px;*/
+    object-fit: contain;
+    text-align: center;
+}
+#hp_content_img li img{
+  margin: 0 auto;
+}
+.blockUI.blockMsg.blockPage{
+  width: 250px!important;
+}
+sup{
+  color: red;
+  font-weight: bold;
+}
 /*cadre bleu*/
 div.cadre{
 /*     margin-left: 100px; */
@@ -33,8 +55,8 @@ img.imglogo1{
   position: relative;
 }
 img.imglogo2{
-  width: 50%;
-  height: 120px;
+  width: 135px;
+  height: 95px;
 }
 
 span.error{color: red;}

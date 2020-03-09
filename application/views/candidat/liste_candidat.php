@@ -1,6 +1,6 @@
-<form method="post" action="<?php echo base_url('Candidat/recherche');?>">
-  <legend>Liste des Candidats</legend>
-  <div class="cont-rechercher">
+<legend>Liste des Candidats</legend>
+<form method="post" action="<?php echo base_url('Candidat/recherche');?>" style="display: none;">
+  <div class="cont-rechercher" >
    <div class="input-group col-lg-5">
     <input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motcher">
     <span class="input-group-btn">
@@ -9,9 +9,8 @@
   </div>
 </div>
 </form>
-<a href="<?php echo base_url('Candidat/ajout')?>"><button class="btn btn-primary" style="text-align: left">Nouveau</button></a>
-<div class="table-responsive">
- <table align="center" class="table table-bordered">
+<div class="">
+ <table align="center" class="table table-bordered" id="_useDataTable">
 
  	<thead>
  		<tr>
@@ -21,7 +20,7 @@
  			<!-- <th>Année obtention bacc</th> -->
  			<!-- <th>Date de naissance</th> -->
  			<!-- <th>Lieu de naissance</th> -->
- 			<th>Cin</th>
+ 			<!-- <th>Cin</th> -->
  			<!-- <th>Fait à</th> -->
  			<!-- <th>Le</th> -->
  			<!-- <th>Numéro bacc</th> -->
@@ -49,7 +48,7 @@
         <!-- <td><?php echo $cand->cand_anne_bac;?></td>  -->
         <!-- <td><?php echo $cand->cand_date_naiss;?></td>  -->
         <!-- <td><?php echo $cand->cand_lieu_naiss;?></td>  -->
-        <td><?php echo $cand->cin_cand;?></td>
+        <!-- <td><?php echo $cand->cin_cand;?></td> -->
         <!-- <td><?php echo $cand->cand_lieu_cin;?></td>  -->
         <!-- <td><?php echo $cand->cand_du_cin;?></td>  -->
         <!-- <td><?php echo $cand->cand_num_bac;?></td>  -->
@@ -74,4 +73,20 @@
 
 </tbody>
 </table>
+
+<a href="<?php echo base_url('Candidat/ajout')?>">
+  <button class="btn btn-primary" style="text-align: left">Nouveau</button>
+</a>
+<?php
+if(isset($parc_id)){
+?>
+<a href="<?php echo base_url('pdf/pdfCandidatListe/'.$parc_id)?>" target="_blanck">
+  <button class="btn btn-success" style="text-align: left">PDF</button>
+</a>
+<?php
+}else{ ?>
+<a href="<?php echo base_url('pdf/pdfCandidatListe')?>" target="_blanck">
+  <button class="btn btn-success" style="text-align: left">PDF</button>
+</a>
+<?php } ?>
 </div>

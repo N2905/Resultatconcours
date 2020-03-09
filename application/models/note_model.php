@@ -13,9 +13,45 @@ class note_model extends CI_Model{
 
 	}
 
+	public function getNotesEtudiants($cand_id = null,$parc_id = null, $anne_acc = null ){
+		$_andwhere = "";
+		// $anne_acc = Date('Y');
+		if(!is_null($cand_id))
+			$_andwhere = " AND c.cand_id=".$cand_id;
+		else if( !is_null($parc_id))
+			$_andwhere = " AND c.parc_id = $parc_id  AND c.anne_acc  = $anne_acc GROUP BY c.cand_id";
+
+		if(!is_null($anne_acc))
+			$_andwhere .= "";
+
+		$moyenne = $this->db->query("SELECT c.*, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id  $_andwhere ORDER BY moyenne DESC" );
+
+		if(!is_null($cand_id))
+			return $moyenne->result()[0];
+
+		return $moyenne->result();
+	}
+
 	public function getMoyenne($cand_id){
-		$moyenne = $this->db->query("SELECT c.cand_id, c.nom_cand, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id AND c.cand_id=".$cand_id);
-		return $moyenne->result()[0];
+		return $this->getNotesEtudiants($cand_id);
+	}
+
+	public function listeNotesCandidats($id, $type = null){
+		$and_where = "";
+		$anne = Date('Y');
+		switch ($type) {
+			case 'parcours':
+				$and_where = " AND c.parc_id = $id AND c.anne_acc = $anne";
+				break;
+			case 'centre':
+				$and_where = " AND c.centre_id = $id";
+				break;
+			case 'anne':
+				$and_where = " AND c.anne_acc = $id";
+				break;
+		}
+		$note = $this->db->query("SELECT c.*, SUM(n.note * ep.coefficient) / SUM(ep.coefficient) AS moyenne FROM note n, epreuve ep, candidat c WHERE n.epre_id = ep.epre_id AND c.cand_id = n.cand_id $and_where GROUP BY c.cand_id ORDER BY moyenne DESC" );
+		return $note->result();
 	}
 
 }

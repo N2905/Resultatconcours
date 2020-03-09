@@ -6,7 +6,7 @@ class candidat_model extends CI_Model{
 	public function getCandidat(){
 		$query = $this->db->get('candidat');
 		if($query->num_rows() > 0){
-			return $query-> result();
+			return $query->result();
 
 	} else{
 		return false;
@@ -86,8 +86,12 @@ class candidat_model extends CI_Model{
 
 		 return false;
 	}
-	public function listeCandidat(){
-		$query = "SELECT c.cand_id,c.nom_cand,c.prenom_cand,c.email_cand,c.tel_cand,c.anne_acc,ce.centre_lieu,p.parc_nom FROM candidat c,centredexamen ce,parcours p WHERE c.centre_id=ce.centre_id AND c.parc_id=p.parc_id";
+	public function listeCandidat($parcours = NULL){
+		$andQuery = NULL;
+		if ( !is_null($parcours) )
+			$andQuery = " AND p.parc_id = $parcours";
+
+		$query = "SELECT c.*,ce.*,p.* FROM candidat c,centredexamen ce,parcours p WHERE c.centre_id=ce.centre_id AND c.parc_id=p.parc_id $andQuery";
 		return $this->db->query($query)->result();
 	}
 	public function centrejoint(){
@@ -121,5 +125,13 @@ class candidat_model extends CI_Model{
   	return $query->result();
 
   }
+
+  public function getAnneAccademique(){
+  	$this->db->select();
+  	$this->db->from('candidat');
+  	$query = $this->db->order_by('anne_acc','DESC')->group_by('anne_acc')->get();
+  	return $query->result();
+  }
+
 }
 

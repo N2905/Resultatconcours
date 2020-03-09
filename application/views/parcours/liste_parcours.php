@@ -1,5 +1,5 @@
 
-<form method="post" action="<?php echo base_url('Parcours/recherche');?>">
+<form method="post" action="<?php echo base_url('Parcours/recherche');?>" style="display: none;">
 	<div class="cont-rechercher">
 		<div class="input-group col-lg-5">
 			<input type="text" placeholder="Réchercher..."  class="form-control"  style="text-align:right" name="motcherparcours">
@@ -11,9 +11,8 @@
 
 </form>
 <legend>Liste parcours existant</legend>
-<a href="<?= base_url('Parcours/ajout');?>"><h4 align="left"> <button class="btn btn-primary">Nouveau</button></h4></a>
-<div class="table-responsive">
-	<table class="table table-border" align="center">
+<div class="">
+	<table class="table table-border" align="center" id="_useDataTable">
 		<thead>
 			<tr>
 				<th>ID</th>
@@ -40,3 +39,6 @@
 	</table>
 </div>
 </form>
+<a href="<?= base_url('Parcours/ajout');?>"><h4 align="left"> 
+	<button class="btn btn-primary">Nouveau</button></h4>
+</a>

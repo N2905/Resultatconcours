@@ -42,13 +42,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $autoload['packages'] = array();
 
 
-$autoload['libraries'] = array('database','email','session','form_validation');
+$autoload['libraries'] = array('database','email','session','form_validation', 'CI_PDF');
 
 
 $autoload['drivers'] = array();
 
 
-$autoload['helper'] = array('url','file', 'form');
+$autoload['helper'] = array('url','file', 'form', 'load_views');
 
 
 $autoload['config'] = array();
@@ -57,4 +57,4 @@ $autoload['config'] = array();
 $autoload['language'] = array();
 
 
-$autoload['model'] = array();
+$autoload['model'] = array('modal_model');

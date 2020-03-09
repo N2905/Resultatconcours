@@ -12,14 +12,20 @@
     <link href="<?php echo base_url() ?>asset/css/responsive.bootstrap.min.css" rel="stylesheet" media="screen"/>
     <link href="<?php echo base_url() ?>asset/css/jquery-ui-themes-1.12.1/jquery-ui.css" rel="stylesheet" media="screen"/>
     <link rel="stylesheet" href="<?php echo base_url() ?>asset/css/datatables.min.css"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/slick-master/slick/slick.css"/>
+    <link rel="stylesheet" href="<?php echo base_url() ?>asset/js/slick-master/slick/slick-theme.css"/>
     <!-- ////////////////// END CSS -->
 
     <!-- //////////////////// JS -->
-    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery.min.js"></script>
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script><!--script -->
-    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.min.js"></script><!-- BOOTSTRAP-->
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/bootstrap/bootstrap.js"></script><!-- BOOTSTRAP-->
     <script src="<?php echo base_url() ?>asset/js/datatables.min.js"></script>
     <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/ui/datepicker.min.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery.ui.js"></script>
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/jquery/blockUI.js"></script>
+    <!-- SLICK MANAO SLIDER -->
+    <script type="text/javascript" src="<?php echo base_url() ?>asset/js/slick-master/slick/slick.min.js"></script>
 
     <!-- //////////////////// END JS -->
     <!-- ///////////// MES SCRIPT -->

@@ -31,7 +31,7 @@
             <div class="panel-heading" role="tab" id="headingTwo">
                 <h4 class="panel-title">
                     <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="">
-                       Mise à jours candidat(e)
+                       Traitement candidat(e)
                     </a>
                 </h4>
             </div>
@@ -39,10 +39,13 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>candidat" >Candidat</a>
+                            <a href="<?php echo base_url()?>candidat/ajout" >Saisie candidat</a>
                         </li>
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>candidat/listeCandidat" >liste candidat</a>
+                            <a href="<?php echo base_url()?>candidat/listeCandidat">Liste des candidats</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="#" data-toggle="modal" data-target="#_choix_parcours">Liste des candidats par critère</a>
                         </li>
                     </ul>
                 </div>
@@ -60,14 +63,41 @@
                 <div>
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <a href="<?php echo base_url()?>note/saisie" >Saisie</a>
+                            <a href="#" data-toggle="modal" data-target="#_choix_note">Saisie note</a><!-- -->
                         </li>
                         <li class="list-group-item">
-                            <a href="#" >Modification</a>
+                            <a href="<?php echo base_url()?>note/liste" >Tous les notes</a>
                         </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel panel-default">
+            <div class="panel-heading" role="tab" id="headingFor">
+                <h4 class="panel-title">
+                    <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFor" aria-expanded="false" aria-controls="collapseFor">
+                        Resultat concours
+                    </a>
+                </h4>
+            </div>
+            <div id="collapseFor" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFor">
+                <div>
+                    <ul class="list-group">
+                        <?php
+                            $CI   = &get_instance();
+                            $data = $CI->modal_model->getParcours();
+                            foreach ($data as $parcour) {
+                        ?>
+                            <li class="list-group-item">
+                                <a href="<?php echo base_url()?>resultat/resultat/<?= $parcour->parc_id ?>"><?= $parcour->parc_nom ?></a><!-- -->
+                            </li>
+                        <?php } ?>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 </div><!----menu-gauche.php-->
+<!-- dialog -->
+<?php $this->view('/dialog/dialog_candidat'); ?>
+<?php $this->view('/dialog/dialog_note'); ?>

@@ -8,57 +8,60 @@ class Candidat extends CI_Controller {
 	}
 
   function index(){
-  	$data['data'] = $this-> m->getCandidat();
-  	$this->load->view('menu_import/head');
-  	$this->load->view('menu_import/header');
-  	$this->load->view('menu_import/menu-gauche');
-  	$this->load->view('menu_import/menu-centre');
+  	$data['data'] = $this->m->getCandidat();
+  	load_views();
   	$this->load-> view('candidat/liste_candidat',$data);
- 	  $this->load->view('menu_import/footer');
- }
- public function recherche(){
-  $key=$this->input->post('motcher');
-  $data['data']=$this->m->recherche($key);
-  $this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
-  $this->load->view('candidat/liste_candidat', $data);
-  $this->load->view('menu_import/footer');
- }
- public function ajout(){
-  $data['centrejoint']= $this->m->centrejoint();
-  $data['parcoursjoint']=$this->m->parcoursjoint();
- 	$this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
- 	$this->load-> view('candidat/candidatform',$data);
- 	$this->load->view('menu_import/footer');
- }
- public function save(){
- 	$result = $this->m->save();
- 	redirect('/Candidat/index');
- }
- public function editer($cand_id){
- 	$data['data']= $this->m->getCandById($cand_id);
- 	$this->load->view('menu_import/head');
-  $this->load->view('menu_import/header');
-  $this->load->view('menu_import/menu-gauche');
-  $this->load->view('menu_import/menu-centre');
- 	$this->load->view('candidat/formediter',$data);
- 	$this->load->view('menu_import/footer');
- }
- public function modifier(){
- 	$resultat= $this->m->modifier();
- 	redirect('Candidat/index');
- }
+    load_views(true);
+  }
 
- public function delete($cand_id){
- 	$result= $this->m->delete($cand_id);
- 	redirect('Candidat/index');
+  public function listeCandidat($parc_id = null){
+    if ( $parc_id !== NULL) {
+      $data['parc_id'] = $parc_id;
+      $data['data'] = $this->m->listeCandidat($parc_id);
+    }else{
+       $data['data'] = $this->m->getCandidat();
+    }
 
- }
- }
+    load_views();
+    $this->load-> view('candidat/liste_candidat',$data);
+    load_views(true);
+  }
+
+  public function recherche(){
+    $key=$this->input->post('motcher');
+    $data['data']=$this->m->recherche($key);
+    load_views();
+    $this->load->view('candidat/liste_candidat', $data);
+    load_views(true);
+  }
+  public function ajout(){
+    $data['centrejoint']= $this->m->centrejoint();
+    $data['parcoursjoint']=$this->m->parcoursjoint();
+    load_views();
+    $this->load-> view('candidat/candidatform',$data);
+    load_views(true);
+  }
+  public function save(){
+    $result = $this->m->save();
+    redirect('/Candidat/index');
+  }
+  public function editer($cand_id){
+    $data['data']= $this->m->getCandById($cand_id);
+    load_views();
+    $this->load->view('candidat/formediter',$data);
+    load_views(true);
+  }
+  public function modifier(){
+    $resultat= $this->m->modifier();
+    redirect('Candidat/index');
+  }
+
+  public function delete($cand_id){
+    $result= $this->m->delete($cand_id);
+    redirect('Candidat/index');
+
+  }
+
+}
 
 
