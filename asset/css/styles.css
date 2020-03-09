@@ -2,6 +2,17 @@
   font-size: 15px !important;
   margin: 5px;
 }
+h3.subtitle{
+  text-align: center;
+}
+#hp_content_img li {
+    /*height: 400px;*/
+    object-fit: contain;
+    text-align: center;
+}
+#hp_content_img li img{
+  margin: 0 auto;
+}
 .blockUI.blockMsg.blockPage{
   width: 250px!important;
 }

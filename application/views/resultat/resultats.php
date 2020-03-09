@@ -2,6 +2,7 @@
   <h2 class="card-header info-color white-text text-center py-4">
     <strong>Resultat concours</strong>
   </h2>
+  <h3 class="subtitle">Parcours : <?= $parcours->getParcById($idparcours)->parc_nom ?></h3>
   <div class="card-body px-lg-5 pt-0">
     <!-- tab1 -->
     <ul class="nav nav-tabs">

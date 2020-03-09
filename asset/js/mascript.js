@@ -46,6 +46,9 @@ jQuery(document).ready(function($){
         // submitValidation();
     });
 
+    //MANDEFA SLIDE
+    sliderImageAccueil();
+
 }); // END LOAD JSQUERY DOM
 // CONTROLE CHAMPS
 function controleChampVide(){
@@ -97,4 +100,55 @@ function saveNote(obj) {
           $.growlUI( '', 'Modifications enregistrées' );
       }
   })
+}
+
+function sliderImageAccueil(){
+  $('._slider').slick({
+      dots: false,
+      infinite: true,
+      speed: 2000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
+      responsive: [
+      {
+        breakpoint: 1290,
+        settings: {
+          slidesToShow: 5,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1100,
+        settings: {
+          slidesToShow: 4,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 1000,
+        settings: {
+          slidesToShow: 3,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 700,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          dots: true
+        }
+      } 
+      ]
+    });
 }

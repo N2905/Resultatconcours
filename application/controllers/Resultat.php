@@ -12,7 +12,7 @@ class Resultat extends CI_Controller{
   public function resultat($id){
     $data['resultats']  = $this->_mresultat;
     $data['centres']    = $this->_mcentre;
-    $data['parcours']   = $this->_mparcours;
+    $data['parcours']   = $this->_mparcours; 
     $data['candidats']  = $this->_mcand;
     $data['idparcours'] = $id;
     load_views();
