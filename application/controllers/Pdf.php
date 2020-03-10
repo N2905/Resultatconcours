@@ -22,9 +22,11 @@ class Pdf extends CI_Controller {
     $this->load->view('pdf/pdfListeCandidat', $data);
   }
 
-  public function pdfResultat($id, $anne){
+  public function pdfResultat($id, $anne, $type_resultat = "admis"){
+
     $data["resultats"]  = $this->_mresultat->listeResultats($id, $anne);
     $data["parcours"]   = $this->_mparcours->getParcById($id);
+    $data["type_resultat"]   = $type_resultat;
     $data["anne"]   = $anne;
     $this->load->view('pdf/pdfResultat', $data );
   }

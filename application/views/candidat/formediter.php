@@ -9,7 +9,7 @@
 	$req_parcours="SELECT * FROM parcours ORDER BY parc_nom ASC";
 	$res_parcours=mysqli_query($conn,$req_parcours) or die(mysqli_error($conn));
  ?>
-<form method="post" action="<?= base_url('Candidat/modifier'); ?> " >
+<form id="_editecandidat" method="post" action="<?= base_url('Candidat/modifier'); ?> " >
 	<input type="hidden" value="<?= $data->cand_id; ?>" name="txt_hidden">
 	<div class="row">
 	<legend>Formulaire candidat</legend>
@@ -60,16 +60,20 @@
      <div class="form-group">
 		<label for="origineag">Centre d'examen <sup>*</sup> :</label>
 		<select name="centre_id" class="form-control required">
-			    <?php while($centre = mysqli_fetch_array($res_centre,MYSQLI_ASSOC)){ ?>
-					<option value="<?php echo $centre["centre_id"] ?>"> <?php echo $centre["centre_lieu"] ?></option>
+			    <?php while($centre = mysqli_fetch_array($res_centre,MYSQLI_ASSOC)){
+			    	$selected = ($centre["centre_id"] == $data->centre_id) ? "selected" : ""; ?>
+			    ?>
+					<option <?= $selected ?> value="<?php echo $centre["centre_id"] ?>"> <?php echo $centre["centre_lieu"] ?></option>
 				<?php } ?>
 		</select>
 	 </div>
 	 	<div class="form-group">
 	 	<label for="parc_nom">Parcours : </label>
 	 	<select name="parc_id" class="form-control required">
-	 		<?php while($parc=mysqli_fetch_array($res_parcours,MYSQLI_ASSOC)){?>
-	 			<option value="<?php echo $parc["parc_id"] ?>"> <?php echo $parc["parc_nom"] ?>
+	 		<?php
+	 			while($parc=mysqli_fetch_array($res_parcours,MYSQLI_ASSOC)){
+	 			$selected = ($parc["parc_id"] == $data->parc_id) ? "selected" : ""; ?>
+	 			<option <?= $selected ?> value="<?php echo $parc["parc_id"] ?>"> <?php echo $parc["parc_nom"] ?>
 	 			</option>
 	 		<?php } ?>
 	 	</select>
@@ -131,7 +135,7 @@
     </section>
     </div>
     <div style="padding: 15px;float: right;">
-         <button  value="Enregistre" class="btn btn-primary"> Enregistre</button>
+         <button type="button" value="Enregistre" class="btn btn-primary" onclick="saveCandidat();return false;"> Enregistre</button>
          <button type="reset" class="btn btn-danger">Annuler</button>
 	</div>
 </form>

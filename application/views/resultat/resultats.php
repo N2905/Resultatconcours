@@ -34,7 +34,7 @@
                   </tbody>
                 </table>
                 <!-- PDF -->
-                <a href="<?php echo base_url()?>pdf/pdfResultat/<?= $idparcours ?>/<?= $candidat->anne_acc ?>" target="_blanck">
+                <a href="<?php echo base_url()?>pdf/pdfResultat/<?= $idparcours ?>/<?= $candidat->anne_acc ?>/<?= ($type_resultat == 'liste_attente') ? 'liste_attente' : 'admis' ; ?>" target="_blanck">
                   <button class="btn btn-success" style="text-align: left">PDF</button>
                 </a>
             </div>
