@@ -23,12 +23,18 @@
                   <?php include('tab-header.php'); ?>
                   <tbody>
                     <?php foreach ($resultats->listeResultats($idparcours, $candidat->anne_acc) as $index => $candidat){?>
-                      <?php include('tab-ligne.php'); ?>
+                      <?php
+                        if( $type_resultat== 'admis' && $candidat->moyenne >= 12 ){
+                            include('tab-ligne.php');
+                        }else if($type_resultat == 'liste_attente' && ($candidat->moyenne >= 10 && $candidat->moyenne <= 11 ) ){
+                            include('tab-ligne.php');
+                        }
+                      ?>
                     <?php }?>
                   </tbody>
                 </table>
                 <!-- PDF -->
-                <a href="<?php echo base_url()?>pdf/pdfResultat/<?= $idparcours ?>/<?= $candidat->anne_acc ?>" target="_blanck">
+                <a href="<?php echo base_url()?>pdf/pdfResultat/<?= $idparcours ?>/<?= $candidat->anne_acc ?>/<?= ($type_resultat == 'liste_attente') ? 'liste_attente' : 'admis' ; ?>" target="_blanck">
                   <button class="btn btn-success" style="text-align: left">PDF</button>
                 </a>
             </div>

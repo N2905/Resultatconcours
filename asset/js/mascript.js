@@ -68,6 +68,12 @@ function controleChampVide(){
     }
 }
 
+function ampioSoratraUrl(elt){
+  var id_select = $(elt).attr('id');
+  var value_url = $('#'+id_select+' :selected').attr('data-url');
+  /*console.log(value_url);*/
+  $(elt).prev('a').attr('href', value_url);
+}
 
 function submitValidation(){
 
@@ -97,6 +103,24 @@ function saveNote(obj) {
           $.blockUI({css : {fontFamily : 'arial, "lucida console", sans-serif'}}) ;
           $.blockUI({css : {fontSize : '12px'}}) ;
 
+          $.growlUI( '', 'Modifications enregistrées' );
+      }
+  })
+}
+
+
+
+//
+function saveCandidat() {
+    var url  = $("#_editecandidat").attr('action');
+    var data  = $("#_editecandidat").serialize();
+    $.ajax({
+      'method' : 'POST',
+      'url' : url,
+      'data' : data,
+      'success' : function(contenu){
+          $.blockUI({css : {fontFamily : 'arial, "lucida console", sans-serif'}}) ;
+          $.blockUI({css : {fontSize : '12px'}}) ;
           $.growlUI( '', 'Modifications enregistrées' );
       }
   })
@@ -148,7 +172,7 @@ function sliderImageAccueil(){
           slidesToScroll: 1,
           dots: true
         }
-      } 
+      }
       ]
     });
 }

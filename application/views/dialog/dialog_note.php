@@ -12,11 +12,17 @@
          <?php
               $CI   = &get_instance();
               $data = $CI->modal_model->getParcours();
-              foreach ($data as $parcour) {
+              foreach ($data as $index => $parcour) {
                ?>
                 <!-- <li class="list-group-item disabled">Cras justo odio</li> -->
                <li class="list-group-item">
                  <a href="<?php echo base_url()?>note/saisie/<?= $parcour->parc_id ?>"><?= $parcour->parc_nom ?></a>
+                 <select id="_select_<?= $index ?>" style="float: right;" onchange="ampioSoratraUrl(this);return false;">
+                   <?php
+                    foreach ($CI->modal_model->getAnne() as $index => $candidat) { ?>
+                      <option data-url="<?= base_url()?>note/saisie/<?= $parcour->parc_id ?>/<?= $candidat->anne_acc ?>"><?= $candidat->anne_acc ?></option>
+                  <?php } ?>
+                 </select>
                </li>
               <?php } ?>
         </ul>

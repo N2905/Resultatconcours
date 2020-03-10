@@ -9,9 +9,12 @@ class Note extends CI_Controller{
     $this->load->model('parcours_model', '_mparcours');//model parcours
   }
 
-  public function saisie($parc_id){
+  public function saisie($parc_id, $anne = null){
+    if (is_null($anne)) {
+      $anne = Date('Y');
+    }
     $data['candidats']  = $this->_mcand;
-    $data['notes']      = $this->_mnote->getNotesEtudiants(null, $parc_id, Date('Y'));
+    $data['notes']      = $this->_mnote->getNotesEtudiants(null, $parc_id, $anne);
     $data['parcours']   = $this->_mparcours->getParcById($parc_id);
     load_views();
     $this->load->view('note/saisie',$data);

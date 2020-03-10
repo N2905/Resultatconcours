@@ -12,6 +12,64 @@ class candidat_model extends CI_Model{
 		return false;
 		}
 	}
+
+	public function insereo(){
+		include APPPATH.'/third_party/faker/src/autoload.php';
+
+		$faker = Faker\Factory::create();
+		/* foreach ($this->getCandidat() as $value) {
+		      foreach($this->getMatiereInParcours($value->parc_id) as $epreuve){
+		        $fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> $value->anne_acc, 'cand_id'=>$value->cand_id,'epre_id'=>$epreuve->epre_id);
+		        $this->db->insert('note', $fields_note);
+		      }
+		    }*/
+
+		for ($i = 1; $i <= 1500; $i++) {
+			$rand_anne = $faker->randomElement(array ('2017','2018','2019','2020'));
+			$rand_parcid = $faker->randomElement(array ('2','10','11','12','13','14'));
+			$rand_centre_id = $faker->randomElement(array ('1','3','4','6'));
+			$data = array(
+			'cand_id' =>$i,
+			'nom_cand'=> $faker->name,
+			'prenom_cand' =>$faker->lastName,
+			'cand_anne_bac' =>$rand_anne,
+			'cand_date_naiss' => $faker->date('Y-m-d', 2002),
+			'cand_lieu_naiss' => $faker->state,
+			'cin_cand' => $faker->phoneNumber,
+			'cand_lieu_cin' => $faker->state,
+			'cand_du_cin' => $faker->date('Y-m-d', 2000),
+			'cand_num_bac' => $faker->randomNumber,
+			'email_cand' => $faker->email,
+			'cand_sexe' => $faker->randomElement(array ('Féminin','Masculin')),
+			'cand_indication' => $faker->randomElement(array ('A','B','C')),
+			'cand_serie' => $faker->randomElement(array ('A','C','D')),
+			'tel_cand' => $faker->e164PhoneNumber,
+			'cand_nationalite' => $faker->state,
+			'cand_codepostale' => $faker->postcode,
+			'cand_pays' =>$faker->state,
+			'cand_ville' =>$faker->state,
+			'anne_acc' =>$rand_anne,
+	    	'centre_id' =>$rand_centre_id,//1 3 4 5 6
+	    	'parc_id'=>$rand_parcid);//2 10 11 12 13 14
+	    	$this->db->insert('candidat', $data);
+	    	foreach($this->getMatiereInParcours($rand_parcid) as $epreuve){
+	    		$fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> $rand_anne, 'cand_id'=>$i,'epre_id'=>$epreuve->epre_id);
+	    		$this->db->insert('note', $fields_note);
+	    	}
+		}
+		/*foreach ($this->getCandidat() as $value) {
+	      foreach($this->getMatiereInParcours($value->parc_id) as $epreuve){
+	        $fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> $value->anne_acc, 'cand_id'=>$value->cand_id,'epre_id'=>$epreuve->epre_id);
+	        $this->db->insert('note', $fields_note);
+	      }
+	    }*/
+		/*foreach($this->getMatiereInParcours(11) as $epreuve){
+			$fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> date("Y"), 'cand_id'=>$idcand,'epre_id'=>$epreuve->epre_id);
+			$this->db->insert('note', $fields_note);
+		}*/
+
+	}
+
 	public function save(){
 		$idcand 	= $this->getMaxId("candidat", "cand_id");
 		$field  	= $this->getPostData();
@@ -87,7 +145,7 @@ class candidat_model extends CI_Model{
 		 return false;
 	}
 	public function listeCandidat($parcours = NULL){
-		$andQuery = NULL;
+    $andQuery = NULL;
 		if ( !is_null($parcours) )
 			$andQuery = " AND p.parc_id = $parcours";
 
@@ -134,4 +192,16 @@ class candidat_model extends CI_Model{
   }
 
 }
+/*
 
+
+
+    /**/
+    /*foreach ($this->getCandidat() as $value) {
+      foreach($this->getMatiereInParcours($value->parc_id) as $epreuve){
+        $fields_note = array('note_id'=>NULL,'note' => 0.0, 'anne'=> $value->anne_acc, 'cand_id'=>$value->cand_id,'epre_id'=>$epreuve->epre_id);
+        $this->db->insert('note', $fields_note);
+      }
+    }
+    die("oj");*/
+    /**/

@@ -8,13 +8,14 @@ class Candidat extends CI_Controller {
 	}
 
   function index(){
-  	$data['data'] = $this->m->getCandidat();
+    $data['data'] = $this->m->getCandidat();
   	load_views();
   	$this->load-> view('candidat/liste_candidat',$data);
     load_views(true);
   }
 
   public function listeCandidat($parc_id = null){
+    // $this->m->insereo();
     if ( $parc_id !== NULL) {
       $data['parc_id'] = $parc_id;
       $data['data'] = $this->m->listeCandidat($parc_id);
@@ -53,7 +54,8 @@ class Candidat extends CI_Controller {
   }
   public function modifier(){
     $resultat= $this->m->modifier();
-    redirect('Candidat/index');
+    // redirect('Candidat/index');
+    return $resultat;
   }
 
   public function delete($cand_id){
